@@ -1,0 +1,2 @@
+vs/BVTest/v15/Browse.VC.db filter=lfs diff=lfs merge=lfs -text
+*.db filter=lfs diff=lfs merge=lfs -text
