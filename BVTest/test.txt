@@ -1,0 +1,33 @@
+{ id=0 label=a type=X nb=0
+}
+{ id=14 label= type=P nb=2
+{ id=4 label=e type=X nb=0
+}{ id=3 label=d type=X nb=0
+}}
+{ id=15 label= type=S nb=2
+{ id=6 label=g type=X nb=0
+}{ id=5 label=f type=X nb=0
+}}
+{ id=18 label= type=P nb=2
+{ id=12 label=m type=X nb=0
+}{ id=11 label=l type=X nb=0
+}}
+{ id=7 label=h type=X nb=0
+}
+{ id=17 label= type=P nb=2
+{ id=10 label=k type=X nb=0
+}{ id=16 label= type=S nb=2
+{ id=9 label=j type=X nb=0
+}{ id=8 label=i type=X nb=0
+}}}
+{ id=13 label= type=S nb=2
+{ id=2 label=c type=X nb=0
+}{ id=1 label=b type=X nb=0
+}}
+# 
+0 : 13
+14 : 7 13
+15 : 7 13
+18 : 17
+7 :   17
+# 

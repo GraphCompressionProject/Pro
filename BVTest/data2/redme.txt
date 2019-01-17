@@ -1,0 +1,8 @@
+Nombre de noeuds du graphe compressé.
+{id du noeud, label du noeud, le type, le nombre de modules
+{Si c'est un module afficher ses composants, s'il est premier afficher ses liens entre ()}
+}
+#
+Les liens du graphe compressé avec chaque module la liste d'adjacence de ce dernier.
+#
+

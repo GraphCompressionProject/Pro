@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="webgraph::debug_obitstream" Collapsed="true">
+    <Position X="3.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAEAAAAgAIAEAAAAAAAAAAAQAAAAUQCgCAAAAAAA=</HashCode>
+      <FileName>debug_obitstream.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::ibitstream" Collapsed="true">
+    <Position X="23.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKUAAAQJEBBAAAABImAAIIAQgARAIBKAQAhUBCIEAAI=</HashCode>
+      <FileName>input_bitstream.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::obitstream" Collapsed="true">
+    <Position X="3.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAAAgAQoAkAAAEBAAAAJIAQgAUIABIUQQlCACIAQAA=</HashCode>
+      <FileName>output_bitstream.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::properties" Collapsed="true">
+    <Position X="20" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAEAAIAAIAAQAAAAAAAAAAAAAACBAAEAAAAAAAA=</HashCode>
+      <FileName>properties.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::webgraph_vertex" Collapsed="true">
+    <Position X="23.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAhAAAAAAAQAAEYAAAIACAAAgAAAAAAA=</HashCode>
+      <FileName>webgraph_vertex.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::ascii_graph::offline_edge_iterator" Collapsed="true">
+    <Position X="21.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAgCABAACAIAAAARAAAiAAAAAAAIAAAEAgAAAAAAA=</HashCode>
+      <FileName>offline_edge_iterator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::ascii_graph::offline_graph" Collapsed="true">
+    <Position X="23.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAIAAACAAAAgQIAAAAAAAggAAEgAAAAAAAAA=</HashCode>
+      <FileName>offline_graph.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::ascii_graph::offline_vertex_iterator" Collapsed="true">
+    <Position X="25.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAFBAACAIAAAAAAAACCABMAAAAIAAAAgAAAAAEA=</HashCode>
+      <FileName>offline_vertex_iterator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::ascii_graph::vertex_descriptor" Collapsed="true">
+    <Position X="21.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIACAAEAhCAAAAAgQAAEIAAAAAAAAACAAAAAgA=</HashCode>
+      <FileName>vertex.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::graph" Collapsed="true">
+    <Position X="21.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BJCInMDAAKA0MRtUBGyEM2ACSRLMADJRPwCjweEjhwQ=</HashCode>
+      <FileName>node_iterator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::node_iterator" Collapsed="true">
+    <Position X="20" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAMAACCAoAAAABAAACYAAAAAAQIIEAAgAAAAABA=</HashCode>
+      <FileName>node_iterator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::utility_iterators::empty_iterator" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAIAAAAAAAAAQEAMAAAA=</HashCode>
+      <FileName>empty_iterator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::utility_iterators::interval_sequence_iterator&lt;integral_type&gt;" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAABACAAIAAEIgIAAIAEAAQEAMAAAE=</HashCode>
+      <FileName>interval_sequence_iterator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::utility_iterators::masked_iterator&lt;val_type&gt;" Collapsed="true">
+    <Position X="8.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgACAAAAAAAAEAAAAAAABAAAIAIgAIAAAAwkAMAgAE=</HashCode>
+      <FileName>masked_iterator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::utility_iterators::merged_iterator&lt;val_type&gt;" Collapsed="true">
+    <Position X="10.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQACAAAAAAAAAAAAAAIAAEAKAEAAwEAMAAAU=</HashCode>
+      <FileName>merged_iterator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::utility_iterators::residual_iterator&lt;val_type&gt;" Collapsed="true">
+    <Position X="15.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAIABQEAMAAAE=</HashCode>
+      <FileName>residual_iterator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::utility_iterators::utility_iterator_base&lt;val_type&gt;" Collapsed="true">
+    <Position X="10.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAQGAMAABA=</HashCode>
+      <FileName>utility_iterator_base.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::iterator_wrappers::cpp_to_java&lt;itor_type, val_type&gt;" Collapsed="true">
+    <Position X="6.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAIAAAAAAAAAQIAIAAAAAAAAAQEAMAAAA=</HashCode>
+      <FileName>iterator_wrappers.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::iterator_wrappers::java_to_cpp&lt;val_type&gt;" Collapsed="true">
+    <Position X="25.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgCAEAAACAIAAAAIAAACAAAIAAAAAQAAAgAAAAAAA=</HashCode>
+      <FileName>iterator_wrappers.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="webgraph::bv_graph::iterator_wrappers::itor_capture_wrapper&lt;itor_type, val_type&gt;" Collapsed="true">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAIAABAQAAAAQEAMAAAA=</HashCode>
+      <FileName>iterator_wrappers.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CompresssAgregation" Collapsed="true">
+    <Position X="20" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAggIAAFAEAMIAAASAgAAAECAIQAQAEEAAAAAA=</HashCode>
+      <FileName>CompressAgregation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="webgraph::eof_exception" Collapsed="true">
+    <Position X="20" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>input_bitstream.hpp</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="webgraph::ascii_graph::edge" Collapsed="true">
+    <Position X="20" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>edge.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="webgraph::ascii_graph::vertex_label_t" Collapsed="true">
+    <Position X="21.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>vertex.hpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

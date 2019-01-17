@@ -1,0 +1,18 @@
+digraph G {
+  graph [splines=true overlap=false]
+  node  [shape=ellipse, width=0.3, height=0.3]
+  0 [label="0"];
+  14 [label="14"];
+  15 [label="15"];
+  18 [label="18"];
+  7 [label="7"];
+  17 [label="17"];
+  13 [label="13"];
+  14 -> 7;
+  14 -> 13;
+  15 -> 7;
+  15 -> 13;
+  18 -> 17;
+  17 -> 7;
+  13 -> 0;
+}

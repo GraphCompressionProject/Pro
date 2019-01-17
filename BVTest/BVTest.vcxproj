@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{A648DC88-446B-46DD-B9D1-41F0915AACA0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>BVTest</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\Tina\Documents\Snap\Snap\glib-core;C:\Users\Tina\Documents\Snap\Snap\snap-adv;C:\Users\Tina\Documents\Snap\Snap\snap-core;C:\Users\Tina\Documents\boost_1_66_0;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Tina\Documents\boost_1_66_0\stage\win32\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Tina\Documents\boost_1_66_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp14</LanguageStandard>
+      <CompileAsManaged>false</CompileAsManaged>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Tina\Documents\boost_1_66_0\stage\win32\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\PFE\PFE-CompressionDeGraphe-20181213T121530Z-001\PFE-CompressionDeGraphe\PFE-PSQ06\PFE-PSQ06\BVTest\boost_1_69_0;D:\PFE\snap-master\snap-adv;D:\PFE\snap-master\snap-core;D:\PFE\snap-master\glib-core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\PFE\PFE-CompressionDeGraphe-20181213T121530Z-001\PFE-CompressionDeGraphe\PFE-PSQ06\PFE-PSQ06\BVTest\boost_1_69_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\boost_1_69_0;D:\PFE\snap-master\snap-adv;D:\PFE\snap-master\glib-core;D:\PFE\snap-master\snap-core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>D:\boost_1_69_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Users\Tina\Documents\Snap\Snap\snap-core\Snap.h" />
+    <ClInclude Include="collection_wrappers.hpp" />
+    <ClInclude Include="CompressAgregation.h" />
+    <ClInclude Include="compression_flags.hpp" />
+    <ClInclude Include="debug_obitstream.hpp" />
+    <ClInclude Include="DirectedGraph.h" />
+    <ClInclude Include="DynamicGraph.h" />
+    <ClInclude Include="edge.hpp" />
+    <ClInclude Include="empty_iterator.hpp" />
+    <ClInclude Include="fast.hpp" />
+    <ClInclude Include="Ik2_trees.hpp" />
+    <ClInclude Include="input_bitstream.hpp" />
+    <ClInclude Include="interval_sequence_iterator.hpp" />
+    <ClInclude Include="iterator_wrappers.hpp" />
+    <ClInclude Include="k2_Trees.hpp" />
+    <ClInclude Include="logger.hpp" />
+    <ClInclude Include="masked_iterator.hpp" />
+    <ClInclude Include="merged_iterator.hpp" />
+    <ClInclude Include="Module.h" />
+    <ClInclude Include="Moteur2.h" />
+    <ClInclude Include="MoteurOrdre.h" />
+    <ClInclude Include="motorK2_trees.h" />
+    <ClInclude Include="motorpar.h" />
+    <ClInclude Include="node_iterator.hpp" />
+    <ClInclude Include="offline_edge_iterator.hpp" />
+    <ClInclude Include="offline_graph.hpp" />
+    <ClInclude Include="offline_graph_boost.hpp" />
+    <ClInclude Include="offline_vertex_iterator.hpp" />
+    <ClInclude Include="Order.h" />
+    <ClInclude Include="output_bitstream.hpp" />
+    <ClInclude Include="properties.hpp" />
+    <ClInclude Include="residual_iterator.hpp" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="singleton_resource_manager.hpp" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="SuperGraph.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextTable.h" />
+    <ClInclude Include="types.hpp" />
+    <ClInclude Include="UndirectedGraph.h" />
+    <ClInclude Include="utility_iterator_base.hpp" />
+    <ClInclude Include="vertex.hpp" />
+    <ClInclude Include="webgraph.hpp" />
+    <ClInclude Include="webgraph_vertex.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\snap-master\snap-core\Snap.cpp" />
+    <ClCompile Include="BVTest.cpp" />
+    <ClCompile Include="compression_flags.cpp" />
+    <ClCompile Include="DirectedGraph.cpp" />
+    <ClCompile Include="DynamicGraph.cpp" />
+    <ClCompile Include="edge.cpp" />
+    <ClCompile Include="fast.cpp" />
+    <ClCompile Include="Ik2_trees.cpp" />
+    <ClCompile Include="input_bitstream.cpp" />
+    <ClCompile Include="k2_Trees.cpp" />
+    <ClCompile Include="logger.cpp" />
+    <ClCompile Include="motorK2_trees.cpp" />
+    <ClCompile Include="node_iterator.cpp" />
+    <ClCompile Include="offline_edge_iterator.cpp" />
+    <ClCompile Include="offline_graph.cpp" />
+    <ClCompile Include="offline_vertex_iterator.cpp" />
+    <ClCompile Include="output_bitstream.cpp" />
+    <ClCompile Include="properties.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="SuperGraph.cpp" />
+    <ClCompile Include="UndirectedGraph.cpp" />
+    <ClCompile Include="vertex.cpp" />
+    <ClCompile Include="webgraph.cpp" />
+    <ClCompile Include="webgraph_vertex.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="BVTest.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
