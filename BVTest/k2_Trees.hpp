@@ -23,16 +23,14 @@ public:
     // Constructor
     k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A);
 
+	//void extend_matrix(std::vector<boost::dynamic_bitset<> > *A, int n1);
+
     // function that creates a T list for each level
     int build_from_matrix(int n,int l,int p,int q, std::vector<boost::dynamic_bitset<> > A);
     // Concatenate the T lists in 2 lists T and L
     void BuildTree();
 
-    /*
-     * Utils functions
-     */
-    int logk(int k, int m);
-    bool all_null_C(boost::dynamic_bitset<> C);
+   // bool all_null_C(boost::dynamic_bitset<> C);
     /*
      * Getter of the two Lists
      */

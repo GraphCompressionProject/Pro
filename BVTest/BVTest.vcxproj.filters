@@ -123,9 +123,6 @@
     <ClInclude Include="Moteur2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Users\Tina\Documents\Snap\Snap\snap-core\Snap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TextTable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -145,6 +142,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DynamicGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Snap\snap-core\Snap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="gcupm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -206,9 +212,6 @@
     <ClCompile Include="SuperGraph.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\snap-master\snap-core\Snap.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="motorK2_trees.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -219,6 +222,15 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DynamicGraph.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Snap\snap-core\Snap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="gcupm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
