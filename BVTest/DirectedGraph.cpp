@@ -142,6 +142,7 @@ DirectedGraph::DirectedGraph(const char* fileName)
 		istringstream nl(nextline);
 		nl >> nodes;
 
+		cout << nodes << endl;
 		//graphe non vide
 		assert(nodes > 0);
 		//double partie = length / 10.0 ; 
@@ -165,6 +166,8 @@ DirectedGraph::DirectedGraph(const char* fileName)
 			while (getline(myfile, line))
 			{
 			
+
+				cout << line << std::endl;
 				pourcen_cum += (((double)line.size()) / length) * 100;
 				if (pourcen_cum >= 10.0)
 				{
@@ -183,12 +186,12 @@ DirectedGraph::DirectedGraph(const char* fileName)
 					for (int n = 0; n < 2; n++)
 					{
 						int val;
+						
 						iss >> val;
 						results.push_back(val);
 					}
 					
 					matrice[results.at(0)][results.at(1)] = true;
-					
 				}
 			}
 

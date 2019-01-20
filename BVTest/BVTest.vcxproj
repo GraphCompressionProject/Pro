@@ -148,18 +148,18 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\boost_1_69_0;D:\PFE\snap-master\snap-adv;D:\PFE\snap-master\glib-core;D:\PFE\snap-master\snap-core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\..\..\boost;..\snap\snap-adv;.\..\..\snap\glib-core;.\..\..\snap\snap-core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\boost_1_69_0\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>.\..\..\boost\stage\x64\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Users\Tina\Documents\Snap\Snap\snap-core\Snap.h" />
+    <ClInclude Include="..\..\Snap\snap-core\Snap.h" />
     <ClInclude Include="collection_wrappers.hpp" />
     <ClInclude Include="CompressAgregation.h" />
     <ClInclude Include="compression_flags.hpp" />
@@ -169,6 +169,7 @@
     <ClInclude Include="edge.hpp" />
     <ClInclude Include="empty_iterator.hpp" />
     <ClInclude Include="fast.hpp" />
+    <ClInclude Include="gcupm.h" />
     <ClInclude Include="Ik2_trees.hpp" />
     <ClInclude Include="input_bitstream.hpp" />
     <ClInclude Include="interval_sequence_iterator.hpp" />
@@ -200,18 +201,20 @@
     <ClInclude Include="types.hpp" />
     <ClInclude Include="UndirectedGraph.h" />
     <ClInclude Include="utility_iterator_base.hpp" />
+    <ClInclude Include="utils.h" />
     <ClInclude Include="vertex.hpp" />
     <ClInclude Include="webgraph.hpp" />
     <ClInclude Include="webgraph_vertex.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\snap-master\snap-core\Snap.cpp" />
+    <ClCompile Include="..\..\Snap\snap-core\Snap.cpp" />
     <ClCompile Include="BVTest.cpp" />
     <ClCompile Include="compression_flags.cpp" />
     <ClCompile Include="DirectedGraph.cpp" />
     <ClCompile Include="DynamicGraph.cpp" />
     <ClCompile Include="edge.cpp" />
     <ClCompile Include="fast.cpp" />
+    <ClCompile Include="gcupm.cpp" />
     <ClCompile Include="Ik2_trees.cpp" />
     <ClCompile Include="input_bitstream.cpp" />
     <ClCompile Include="k2_Trees.cpp" />
@@ -231,6 +234,7 @@
     </ClCompile>
     <ClCompile Include="SuperGraph.cpp" />
     <ClCompile Include="UndirectedGraph.cpp" />
+    <ClCompile Include="utils.cpp" />
     <ClCompile Include="vertex.cpp" />
     <ClCompile Include="webgraph.cpp" />
     <ClCompile Include="webgraph_vertex.cpp" />
