@@ -3,7 +3,7 @@
 //
 #include "stdafx.h"
 #include "k2_Trees.hpp"
-#include "utils.h"
+#include "helpfunctions.h"
 
 using namespace std ;
 /*
@@ -16,13 +16,13 @@ using namespace std ;
 k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A)
     :k(k)
 {
-    prof = logk(k,n);
+    prof = helpfunctions::logk(k,n);
 	int n1 = n;
 	
 	if (n != pow(k, prof)) {
 		prof++;
 		n1 = pow(k, prof);
-		utils::extend_matrix(&A, n1);
+		helpfunctions::extend_matrix(&A, n1);
 	}
 	
 	for (int i = 0; i < n1; i++)
@@ -68,7 +68,7 @@ int k2_Trees::build_from_matrix(int n,int l,int p,int q, std::vector<boost::dyna
             }
         }
     }
-    if (utils::all_null_C(C)) return 0;
+    if (helpfunctions::all_null_C(C)) return 0;
     // Verify if the current level Exist
     if(T.size()<prof-l+1)
     { // if not allocate space for Element
@@ -111,12 +111,6 @@ boost::dynamic_bitset<> k2_Trees::get_T(){
 
 
 
-int k2_Trees::rank(boost::dynamic_bitset<> _T,int n){
-    int cpt=0;
-    for(int i=0;i<=n;i++)
-        if (_T[i] == 1) cpt++;
-    return cpt;
-}
 
 /* 
  * Function that retreives the direct neighbors
@@ -139,7 +133,7 @@ void k2_Trees::Direct(int n,int  p,int  q,int  x){
     {
         if ((x== -1)||(_T[x]==1)){
             unsigned int y=0;
-            y= rank(_T,x)*k*k + k*(p/(n/k));
+            y= helpfunctions::rank(_T,x)*k*k + k*(p/(n/k));
             for(int j=0;j<k;j++){
                 Direct(n/k, p%(n/k), q + j*(n/k), y+j);
             }
@@ -166,7 +160,7 @@ void k2_Trees::Reverse(int n,int  q,int  p,int  x){
     else //internal Node
     {
         if ((x== -1)||(_T[x]==1)){
-            unsigned int y= rank(_T,x)*k*k + q/(n/k);
+            unsigned int y= helpfunctions::rank(_T,x)*k*k + q/(n/k);
             for(int j=0;j<k;j++){
                 Reverse(n/k, q%(n/k), p + j*(n/k), y + j*k);
             }

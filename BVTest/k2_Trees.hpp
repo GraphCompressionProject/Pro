@@ -37,10 +37,7 @@ public:
     boost::dynamic_bitset<> get_L();
     boost::dynamic_bitset<> get_T();
 
-    /*
-     * Getters of the direct and reverse neighbors
-     */
-    int rank(boost::dynamic_bitset<> _T,int n);
+
 
     void Direct(int n,int  p,int  q, int   x);
     void Reverse(int n,int  p,int  q,int  x);

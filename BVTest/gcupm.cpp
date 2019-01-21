@@ -1,6 +1,6 @@
 #include "stdafx.h"
 #include "gcupm.h"
-#include "utils.h"
+#include "helpfunctions.h"
 
 gcupm::gcupm(std::vector<boost::dynamic_bitset<> > Adj,int patternSize, int modelType)
 	:modelType(modelType), patternSize(patternSize)
@@ -26,6 +26,7 @@ gcupm::gcupm(std::vector<boost::dynamic_bitset<> > Adj,int patternSize, int mode
 int gcupm::valueOf(std::vector<boost::dynamic_bitset<> > Adj,int lign,int col,int limit) {
 	int n = 0;
 	int puissance = 1;
+	
 	for (int i = col * patternSize; i < (col + 1)*patternSize -limit; i++) {
 		n += puissance * Adj[lign][i];
 		puissance*=2;
@@ -39,12 +40,15 @@ void gcupm::discoverPattern1(std::vector<boost::dynamic_bitset<> > Adj)
 	for (int i = 0; i < Adj.size(); i++) {
 		mat.push_back(C);
 		for (int j = 0; j < Adj.size() / patternSize; j++) {
-			int i = valueOf(Adj, i, j,1);
-			int pos = log(i) / log(2);
-			if ((Adj[i][(j+1)*patternSize-1] && i == pow(2, pos)) || (!Adj[i][(j+1)*patternSize] && i == 0)) {
+			int v = valueOf(Adj, i, j, 1);
+
+			unsigned int pos = helpfunctions::logk(2, v);
+			if ((Adj[i][(j+1)*patternSize-1] && v == pow(2, pos)) || (!Adj[i][(j+1)*patternSize] && v == 0)) {
 				//We have a match with the first pattern
 				mat[i].push_back(true);
-				boost::dynamic_bitset<> chunk = utils::toBinary(pos);
+
+				boost::dynamic_bitset<> chunk = helpfunctions::toBinary(pos,helpfunctions::logk(2, patternSize));
+				
 				for (int o = 0; o < chunk.size(); o++)
 					mat[i].push_back(chunk[o]);
 			}
@@ -56,8 +60,6 @@ void gcupm::discoverPattern1(std::vector<boost::dynamic_bitset<> > Adj)
 
 		}
 	}
-		
-
 }
 
 void gcupm::discoverPattern2(std::vector<boost::dynamic_bitset<> > Adj)
@@ -65,13 +67,14 @@ void gcupm::discoverPattern2(std::vector<boost::dynamic_bitset<> > Adj)
 	boost::dynamic_bitset<>C{ 0 };
 	for (int i = 0; i < Adj.size(); i++) {
 		mat.push_back(C);
+		
 		for (int j = 0; j < Adj.size() / patternSize; j++) {
-			int i = valueOf(Adj, i, j,0);
-			int pos = log(i) / log(2);
-			if ( i == pow(2, pos)){
+			unsigned int v = valueOf(Adj, i, j,0);
+			unsigned int pos = helpfunctions::logk(2, v);
+			if ( v == pow(2, pos)){
 				//We have a match with the first pattern
 				mat[i].push_back(true);
-				boost::dynamic_bitset<> chunk = utils::toBinary(pos);
+				boost::dynamic_bitset<> chunk = helpfunctions::toBinary(pos,helpfunctions::logk(2,patternSize));
 				for (int o = 0; o < chunk.size(); o++)
 					mat[i].push_back(chunk[o]);
 			}
@@ -91,23 +94,23 @@ void gcupm::discoverPattern3(std::vector<boost::dynamic_bitset<>> Adj)
 	for (int i = 0; i < Adj.size(); i++) {
 		mat.push_back(C);
 		for (int j = 0; j < Adj.size() / patternSize; j++) {
-			int i = valueOf(Adj, i, j,1);
-			int pos = log(i) / log(2);
-			if ((Adj[i][(j + 1)*patternSize - 1] && i == pow(2, pos)) || (!Adj[i][(j + 1)*patternSize] && i == 0)) {
+			int v = valueOf(Adj, i, j,1);
+			int pos = helpfunctions::logk(2, v);
+			if ((Adj[i][(j + 1)*patternSize - 1] && v == pow(2, pos)) || (!Adj[i][(j + 1)*patternSize] && v == 0)) {
 				//We have a match with the first pattern
 				mat[i].push_back(true);
-				boost::dynamic_bitset<> chunk = utils::toBinary(pos);
+				boost::dynamic_bitset<> chunk = helpfunctions::toBinary(pos, helpfunctions::logk(2,patternSize));
 				for (int o = 0; o < chunk.size(); o++)
 					mat[i].push_back(chunk[o]);
 
 			}
 			else {
-				i += Adj[i][j*patternSize-1] * pow(2, patternSize -1);
-				pos= log(i) / log(2);
-				if (i == pow(2, pos)) {
+				v += Adj[i][j*patternSize-1] * pow(2, patternSize -1);
+				pos= helpfunctions::logk(2, v);
+				if (v == pow(2, pos)) {
 					//We have a match with the second pattern
 					mat[i].push_back(true);
-					boost::dynamic_bitset<> chunk = utils::toBinary(pos + utils::logk(patternSize, 2));
+					boost::dynamic_bitset<> chunk = helpfunctions::toBinary(pos + helpfunctions::logk(2,patternSize), helpfunctions::logk(2,patternSize));
 					for (int o = 0; o < chunk.size(); o++)
 						mat[i].push_back(chunk[o]);
 				}
@@ -122,7 +125,9 @@ void gcupm::discoverPattern3(std::vector<boost::dynamic_bitset<>> Adj)
 	}
 }
 
-
+std::vector<boost::dynamic_bitset<> > gcupm::get_Result() {
+	return mat;
+}
 
 gcupm::~gcupm()
 {

@@ -170,6 +170,7 @@
     <ClInclude Include="empty_iterator.hpp" />
     <ClInclude Include="fast.hpp" />
     <ClInclude Include="gcupm.h" />
+    <ClInclude Include="helpfunctions.h" />
     <ClInclude Include="Ik2_trees.hpp" />
     <ClInclude Include="input_bitstream.hpp" />
     <ClInclude Include="interval_sequence_iterator.hpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="MoteurOrdre.h" />
     <ClInclude Include="motorK2_trees.h" />
     <ClInclude Include="motorpar.h" />
+    <ClInclude Include="motor_pattern_extraction.h" />
     <ClInclude Include="node_iterator.hpp" />
     <ClInclude Include="offline_edge_iterator.hpp" />
     <ClInclude Include="offline_graph.hpp" />
@@ -201,7 +203,6 @@
     <ClInclude Include="types.hpp" />
     <ClInclude Include="UndirectedGraph.h" />
     <ClInclude Include="utility_iterator_base.hpp" />
-    <ClInclude Include="utils.h" />
     <ClInclude Include="vertex.hpp" />
     <ClInclude Include="webgraph.hpp" />
     <ClInclude Include="webgraph_vertex.hpp" />
@@ -215,11 +216,13 @@
     <ClCompile Include="edge.cpp" />
     <ClCompile Include="fast.cpp" />
     <ClCompile Include="gcupm.cpp" />
+    <ClCompile Include="helpfunctions.cpp" />
     <ClCompile Include="Ik2_trees.cpp" />
     <ClCompile Include="input_bitstream.cpp" />
     <ClCompile Include="k2_Trees.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="motorK2_trees.cpp" />
+    <ClCompile Include="motor_pattern_extraction.cpp" />
     <ClCompile Include="node_iterator.cpp" />
     <ClCompile Include="offline_edge_iterator.cpp" />
     <ClCompile Include="offline_graph.cpp" />
@@ -234,7 +237,6 @@
     </ClCompile>
     <ClCompile Include="SuperGraph.cpp" />
     <ClCompile Include="UndirectedGraph.cpp" />
-    <ClCompile Include="utils.cpp" />
     <ClCompile Include="vertex.cpp" />
     <ClCompile Include="webgraph.cpp" />
     <ClCompile Include="webgraph_vertex.cpp" />

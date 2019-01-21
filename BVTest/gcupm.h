@@ -31,7 +31,7 @@ private:
 
 public:
 	gcupm(std::vector<boost::dynamic_bitset<> > Adj, int patternSize, int modelType);
-	
+	std::vector<boost::dynamic_bitset<> > get_Result();
 	virtual ~gcupm();
 };
 
