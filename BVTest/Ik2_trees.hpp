@@ -3,6 +3,7 @@
 #include <boost/dynamic_bitset.hpp>
 #include <ctgmath>
 #include <iostream>
+#include "helpfunctions.h"
 
 using std::vector;
 
@@ -24,16 +25,12 @@ class Ik2_Trees{
         boost::dynamic_bitset<> build_from_matrix(int n,int l,int p,int q, vector<vector<boost::dynamic_bitset<>>> A );
         // Concatenate the T lists in 2 lists T and L
         void BuildTree();
-        /*
-         * Utils functions
-         */
-        int logk(int k, int m);
-        bool all_null_C(boost::dynamic_bitset<> C);
+       
         bool all_null_C(std::vector<boost::dynamic_bitset<>> Ctmp);
 
         boost::dynamic_bitset<> get_T();
         boost::dynamic_bitset<> get_L();
-        int rank(boost::dynamic_bitset<> _T,int n);
+        
 };
 
 
