@@ -185,8 +185,7 @@ DirectedGraph::DirectedGraph(const char* fileName)
 					results.clear();
 					for (int n = 0; n < 2; n++)
 					{
-						int val;
-						
+						int val;		
 						iss >> val;
 						results.push_back(val);
 					}

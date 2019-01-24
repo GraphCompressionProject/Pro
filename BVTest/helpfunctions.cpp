@@ -42,10 +42,7 @@ using namespace std;
 			 r.push_back(c);
 			 v = v / 2;
 		 }
-		 cout << n << endl;
-		 cout << v << endl;
 	 }
-	 cout << m << endl;
 	 return r;
  }
 

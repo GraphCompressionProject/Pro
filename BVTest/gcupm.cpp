@@ -26,11 +26,11 @@ gcupm::gcupm(std::vector<boost::dynamic_bitset<> > Adj,int patternSize, int mode
 int gcupm::valueOf(std::vector<boost::dynamic_bitset<> > Adj,int lign,int col,int limit) {
 	int n = 0;
 	int puissance = 1;
-	
-	for (int i = col * patternSize; i < (col + 1)*patternSize -limit; i++) {
+	for (int i = col * patternSize+limit; i < (col + 1)*patternSize ; i++) {
 		n += puissance * Adj[lign][i];
 		puissance*=2;
 	}
+
 	return n;
 }
 
@@ -41,13 +41,12 @@ void gcupm::discoverPattern1(std::vector<boost::dynamic_bitset<> > Adj)
 		mat.push_back(C);
 		for (int j = 0; j < Adj.size() / patternSize; j++) {
 			int v = valueOf(Adj, i, j, 1);
-
 			unsigned int pos = helpfunctions::logk(2, v);
-			if ((Adj[i][(j+1)*patternSize-1] && v == pow(2, pos)) || (!Adj[i][(j+1)*patternSize] && v == 0)) {
+			
+			if ((Adj[i][j*patternSize] && v == pow(2, pos)) || (!Adj[i][j*patternSize] && v == 0)) {
 				//We have a match with the first pattern
 				mat[i].push_back(true);
-
-				boost::dynamic_bitset<> chunk = helpfunctions::toBinary(pos,helpfunctions::logk(2, patternSize));
+				boost::dynamic_bitset<> chunk = helpfunctions::toBinary(v==0? 0:pos+1,helpfunctions::logk(2, patternSize));
 				
 				for (int o = 0; o < chunk.size(); o++)
 					mat[i].push_back(chunk[o]);
@@ -69,7 +68,7 @@ void gcupm::discoverPattern2(std::vector<boost::dynamic_bitset<> > Adj)
 		mat.push_back(C);
 		
 		for (int j = 0; j < Adj.size() / patternSize; j++) {
-			unsigned int v = valueOf(Adj, i, j,0);
+		    unsigned int v = valueOf(Adj, i, j,0);
 			unsigned int pos = helpfunctions::logk(2, v);
 			if ( v == pow(2, pos)){
 				//We have a match with the first pattern
@@ -94,23 +93,26 @@ void gcupm::discoverPattern3(std::vector<boost::dynamic_bitset<>> Adj)
 	for (int i = 0; i < Adj.size(); i++) {
 		mat.push_back(C);
 		for (int j = 0; j < Adj.size() / patternSize; j++) {
-			int v = valueOf(Adj, i, j,1);
-			int pos = helpfunctions::logk(2, v);
-			if ((Adj[i][(j + 1)*patternSize - 1] && v == pow(2, pos)) || (!Adj[i][(j + 1)*patternSize] && v == 0)) {
+			int v = valueOf(Adj, i, j, 1);
+			unsigned int pos = helpfunctions::logk(2, v);
+
+			if ((Adj[i][j*patternSize] && v == pow(2, pos)) || (!Adj[i][j*patternSize] && v == 0)) {
 				//We have a match with the first pattern
 				mat[i].push_back(true);
-				boost::dynamic_bitset<> chunk = helpfunctions::toBinary(pos, helpfunctions::logk(2,patternSize));
+				boost::dynamic_bitset<> chunk = helpfunctions::toBinary(v == 0 ? 0 : pos + 1, helpfunctions::logk(2, patternSize)+1);
+
 				for (int o = 0; o < chunk.size(); o++)
 					mat[i].push_back(chunk[o]);
-
 			}
 			else {
-				v += Adj[i][j*patternSize-1] * pow(2, patternSize -1);
+				//cout << v/2 << endl;
+				v = v*2 + Adj[i][j*patternSize] ;
+				
 				pos= helpfunctions::logk(2, v);
 				if (v == pow(2, pos)) {
-					//We have a match with the second pattern
+					//We have a match with the first pattern
 					mat[i].push_back(true);
-					boost::dynamic_bitset<> chunk = helpfunctions::toBinary(pos + helpfunctions::logk(2,patternSize), helpfunctions::logk(2,patternSize));
+					boost::dynamic_bitset<> chunk = helpfunctions::toBinary(pos + patternSize, helpfunctions::logk(2, patternSize)+1);
 					for (int o = 0; o < chunk.size(); o++)
 						mat[i].push_back(chunk[o]);
 				}

@@ -16,14 +16,16 @@ public:
 
 	void compressGraphUPM(const char* graphName, int patternSize, int modelType) {
 		DirectedGraph graph(graphName);
-
+		/*for (boost::dynamic_bitset<>::size_type i = 0; i < graph.getMatrix().size(); i++) {
+			for (boost::dynamic_bitset<>::size_type j = 0; j < graph.getMatrix()[i].size(); j++)
+				cout << graph.getMatrix()[i][j] << " ";
+			cout << endl;
+		}*/
 		gcupm compressor(graph.getMatrix(), patternSize, modelType);
 
 		std::vector<boost::dynamic_bitset<> > Comp = compressor.get_Result();
 		for (boost::dynamic_bitset<>::size_type i = 0; i < Comp.size(); i++) {
-			for (boost::dynamic_bitset<>::size_type j = 0; j < Comp[i].size(); j++)
-				cout << Comp[i][j] << " ";
-			cout << " \n"<<endl;
+				cout << Comp[i] << endl;
 		}
 	};
 };
