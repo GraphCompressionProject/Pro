@@ -3,15 +3,13 @@ c:\users\hafsa\desktop\pro\x64\release\bvtest.iobj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\bvtest.pch
 c:\users\hafsa\desktop\pro\bvtest\x64\release\vc141.pdb
 c:\users\hafsa\desktop\pro\bvtest\x64\release\stdafx.obj
-c:\users\hafsa\desktop\pro\bvtest\x64\release\output_bitstream.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\offline_vertex_iterator.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\offline_graph.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\offline_edge_iterator.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\node_iterator.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\motor_pattern_extraction.obj
-c:\users\hafsa\desktop\pro\bvtest\x64\release\motork2_trees.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\logger.obj
-c:\users\hafsa\desktop\pro\bvtest\x64\release\k2_trees.obj
+c:\users\hafsa\desktop\pro\bvtest\x64\release\listadjacence.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\input_bitstream.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\ik2_trees.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\helpfunctions.obj
@@ -29,6 +27,9 @@ c:\users\hafsa\desktop\pro\bvtest\x64\release\vertex.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\undirectedgraph.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\supergraph.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\properties.obj
+c:\users\hafsa\desktop\pro\bvtest\x64\release\output_bitstream.obj
+c:\users\hafsa\desktop\pro\bvtest\x64\release\motork2_trees.obj
+c:\users\hafsa\desktop\pro\bvtest\x64\release\k2_trees.obj
 c:\users\hafsa\desktop\pro\x64\release\bvtest.exe
 c:\users\hafsa\desktop\pro\x64\release\bvtest.pdb
 c:\users\hafsa\desktop\pro\bvtest\x64\release\bvtest.res

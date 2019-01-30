@@ -5,7 +5,7 @@
 #include <direct.h>
 #include "Order.h"
 
-
+using namespace std;
 
 DirectedGraph::DirectedGraph(bool empty, int n, int m, string fileName)
 {
@@ -215,6 +215,101 @@ DirectedGraph::DirectedGraph(const char* fileName)
 
 }
 
+DirectedGraph::DirectedGraph(string fileName)
+{
+
+	this->fileName = fileName.c_str();
+	string line;
+	fstream myfile;
+	myfile.open(("..\\..\\BVTest\\data\\" + this->fileName + ".txt").c_str(), ios::in);
+
+	myfile.seekg(0, myfile.end);
+	double length = myfile.tellg();
+	myfile.seekg(0, myfile.beg);
+	//récupérer le nombre de noeuds 
+	string nextline;
+	getline(myfile, nextline);
+	istringstream nl(nextline);
+	nl >> nodes;
+
+	cout << nodes << endl;
+	//graphe non vide
+	assert(nodes > 0);
+	//double partie = length / 10.0 ; 
+	cout << "file length " << (int)length << " bytes" << endl;
+
+	//double cumul = 0.0; 
+	int pourcentage = 10;
+	double pourcentage2;
+	double pourcen_cum = 0;
+	int i = 0;
+
+	cout << "file length " << (int)length << " bytes" << endl;
+
+	std::istringstream iss;
+	std::vector<int> results;
+	if (myfile.is_open())
+	{
+		std::cout << "File Loading ... " << std::endl;
+
+		while (getline(myfile, line))
+		{
+			//cout << line << std::endl;
+			pourcen_cum += (((double)line.size()) / length) * 100;
+			if (pourcen_cum >= 10.0)
+			{
+
+				cout << " --- " << pourcentage << "%";
+				pourcentage += 10;
+				pourcen_cum -= 10;
+				i++;
+			}
+
+			if (line[0] != '#')
+			{
+				iss.clear();
+				iss.str(line);
+				results.clear();
+				for (int n = 0; n < 2; n++)
+				{
+					int val;
+					iss >> val;
+					results.push_back(val);
+				}
+
+				if (liste.size() <= results.at(0)) {
+					for (int k = liste.size(); k <= results.at(0); k++) {
+						listAdjacence adj;
+						liste.push_back(adj);
+					}
+				} 
+				
+				liste[results.at(0)].addElement(results.at(1));
+
+			}
+		}
+
+		while (i != 10)
+		{
+			cout << " --- " << pourcentage << "%";
+			pourcentage += 10;
+			i++;
+		}
+		cout << endl;
+
+
+		myfile.close();
+		std::cout << "File Loaded. " << std::endl;
+
+
+	}
+	else
+	{
+		cerr << "File not opened" << endl;
+	}
+
+}
+
 
 int DirectedGraph::getNumNodes()
 {
@@ -232,6 +327,11 @@ int DirectedGraph::getNodes()
 vector<boost::dynamic_bitset<>> DirectedGraph::getMatrix()
 {
 	return matrice;
+}
+
+vector<listAdjacence> DirectedGraph::getAdjList()
+{
+	return liste;
 }
 
 TNGraph::TNodeI DirectedGraph::getNodeIteratorBegin()

@@ -1,11 +1,12 @@
-﻿  gcupm.cpp
-c:\users\hafsa\desktop\pro\bvtest\gcupm.cpp(29): warning C4018: '<' : incompatibilité signed/unsigned
-c:\users\hafsa\desktop\pro\bvtest\gcupm.cpp(56): warning C4018: '<' : incompatibilité signed/unsigned
-c:\users\hafsa\desktop\pro\bvtest\gcupm.cpp(82): warning C4018: '<' : incompatibilité signed/unsigned
-c:\users\hafsa\desktop\pro\bvtest\gcupm.cpp(121): warning C4018: '<' : incompatibilité signed/unsigned
+﻿  k2_Trees.cpp
+c:\users\hafsa\desktop\pro\bvtest\k2_trees.cpp(25): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+c:\users\hafsa\desktop\pro\bvtest\k2_trees.cpp(56): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+c:\users\hafsa\desktop\pro\bvtest\k2_trees.cpp(166): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+c:\users\hafsa\desktop\pro\bvtest\k2_trees.cpp(203): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
+c:\users\hafsa\desktop\pro\bvtest\k2_trees.cpp(231): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
   Génération de code en cours
-  3 of 4870 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+  2 of 4947 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    14 functions had inline decision re-evaluated but remain unchanged
+    1 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   BVTest.vcxproj -> C:\Users\hafsa\Desktop\Pro\x64\Release\BVTest.exe

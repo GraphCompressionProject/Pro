@@ -6,6 +6,7 @@
 #include <sstream>
 #include <vector>
 #include <boost/dynamic_bitset.hpp>
+#include "listAdjacence.h"
 
 using namespace std;
 
@@ -15,12 +16,20 @@ class DirectedGraph
 public: 
 	PNGraph graph;
 	string fileName;
+	/*
+	 * Adjacency Matrix of the graph
+	 */
 	vector<boost::dynamic_bitset<>> matrice; 
+	/*
+	 * Adjacency List of the graph
+	 */
+	vector<listAdjacence> liste;
 	int nodes;
 	
 	
 public:
 	DirectedGraph(const char* fileName);
+	DirectedGraph(string fileName);
 	DirectedGraph(bool empty, int n, int m, string fileName);
 	DirectedGraph(const char* fileName, int load);
 	DirectedGraph(PNGraph& G);
@@ -29,7 +38,8 @@ public:
 	int getNumNodes();
 	int getNumEdges();
 	int getNodes();
-		vector<boost::dynamic_bitset<>> getMatrix();
+	vector<boost::dynamic_bitset<>> getMatrix();
+	vector<listAdjacence> getAdjList();
 	string getFileName() { return fileName; }
 
 	TNGraph::TNodeI getNodeIteratorBegin();
