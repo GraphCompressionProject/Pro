@@ -5,6 +5,7 @@
 gcupm::gcupm(std::vector<boost::dynamic_bitset<> > Adj,int patternSize, int modelType)
 	:modelType(modelType), patternSize(patternSize)
 {	
+	clock_t tStart = clock();
 	switch (modelType) {
 	case 0:
 		discoverPattern1(Adj);
@@ -19,7 +20,7 @@ gcupm::gcupm(std::vector<boost::dynamic_bitset<> > Adj,int patternSize, int mode
 		cout << "error in model type\n It could only be of type 0, 1 or 2." << endl;
 		break;
 	}
-
+	tExecution = (double)(clock() - tStart) / CLOCKS_PER_SEC;
 	
 }
 
@@ -129,6 +130,21 @@ void gcupm::discoverPattern3(std::vector<boost::dynamic_bitset<>> Adj)
 
 std::vector<boost::dynamic_bitset<> > gcupm::get_Result() {
 	return mat;
+}
+
+double gcupm::get_Time()
+{
+	return tExecution;
+}
+
+int gcupm::get_size()
+{
+	int size_mat =0;
+	for (int i = 0; i < mat.size(); i++) {
+		size_mat += mat[i].size();
+	}
+	
+	return size_mat;
 }
 
 gcupm::~gcupm()

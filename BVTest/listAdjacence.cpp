@@ -34,5 +34,5 @@ void listAdjacence::addElement(unsigned int elm)
 
 void listAdjacence::advance()
 {
-	if(index<listAdj.size()-1) index++;
+	if( index < (listAdj.size()-1) ) index++;
 }

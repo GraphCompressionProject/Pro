@@ -167,7 +167,7 @@ DirectedGraph::DirectedGraph(const char* fileName)
 			{
 			
 
-				cout << line << std::endl;
+				//cout << line << std::endl;
 				pourcen_cum += (((double)line.size()) / length) * 100;
 				if (pourcen_cum >= 10.0)
 				{

@@ -1,5 +1,6 @@
 #pragma once
 #include <boost/dynamic_bitset.hpp>
+#include <time.h>
 using namespace std;
 class gcupm
 {
@@ -23,6 +24,11 @@ private:
 	*/
 	unsigned int patternSize;
 
+	/*
+	 * Execution time of the compressio process
+	 */
+	double tExecution;
+
 	int valueOf(std::vector<boost::dynamic_bitset<> > Adj, int lign, int col,int limit);
 
 	void discoverPattern1(std::vector<boost::dynamic_bitset<> > Adj);
@@ -32,6 +38,8 @@ private:
 public:
 	gcupm(std::vector<boost::dynamic_bitset<> > Adj, int patternSize, int modelType);
 	std::vector<boost::dynamic_bitset<> > get_Result();
+	double get_Time();
+	int get_size();
 	virtual ~gcupm();
 };
 
