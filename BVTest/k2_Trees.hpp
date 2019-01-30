@@ -8,7 +8,7 @@
 #include <ctgmath>
 #include <iostream>
 #include "listAdjacence.h"
-
+#include <time.h>
 
 class k2_Trees {
 
@@ -16,6 +16,7 @@ private:
     std::vector<boost::dynamic_bitset<> > T;
     boost::dynamic_bitset<> _T;
     boost::dynamic_bitset<> _L;
+	double tExcexution;
 
     int k ;
     unsigned int prof ;
@@ -43,7 +44,7 @@ public:
      */
     boost::dynamic_bitset<> get_L();
     boost::dynamic_bitset<> get_T();
-
+	double get_Time();
 
     void Direct(int n,int  p,int  q, int   x);
     void Reverse(int n,int  p,int  q,int  x);

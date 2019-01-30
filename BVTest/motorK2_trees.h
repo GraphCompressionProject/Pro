@@ -40,6 +40,12 @@ public:
 		k2_Trees tree(k, graph.getNodes(), graph.getMatrix());
 		cout << "T = " << tree.get_T() << endl;
 		cout << "L = " << tree.get_L() << endl;
+		cout << "========================================================" << endl;
+		std::fixed;
+		
+		cout << "Le taux de Compression est de :" << (double) (tree.get_T().size() + tree.get_L().size()) / (graph.getNodes()*graph.getNodes()) <<"%"<< endl;
+		cout << "Le taux de Compression est de :" << (graph.getNodes()*graph.getNodes())/(tree.get_T().size() + tree.get_L().size())  << endl;
+		cout << "Le temps de Compression est de :" << (double) tree.get_Time() << endl;
 	};
 
 	void compressGraphK2StatFromListe(const char* graphName, int k) {

@@ -52,7 +52,9 @@ k2_Trees::k2_Trees(int k, int n, std::vector<listAdjacence> A)
 		prof++;
 		n1 = pow(k, prof);
 	}
+	clock_t tStart = clock();
 	build_from_List(n1, 1, 0, 0, &A);
+	tExcexution = (double) (clock() - tStart) / CLOCKS_PER_SEC;
 	BuildTree();
 	T.clear();
 	T.shrink_to_fit();
@@ -177,6 +179,11 @@ boost::dynamic_bitset<> k2_Trees::get_L(){
 
 boost::dynamic_bitset<> k2_Trees::get_T(){
     return _T;
+}
+
+double k2_Trees::get_Time()
+{
+	return  tExcexution;
 }
 
 
