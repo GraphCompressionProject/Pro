@@ -4,6 +4,7 @@
 #include "stdafx.h"
 #include "k2_Trees.hpp"
 #include "helpfunctions.h"
+#include "listAdjacence.h"
 
 using namespace std ;
 /*
@@ -25,18 +26,38 @@ k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A)
 		helpfunctions::extend_matrix(&A, n1);
 	}
 	
-	for (int i = 0; i < n1; i++)
-	{
-		for (int j = 0; j < n1; j++)
-			cout << A[i][j] << " ";
-		cout << "\n";
-	}
+	
 
 	build_from_matrix(n1, 1, 0, 0, A);
     BuildTree();
     T.clear();
     T.shrink_to_fit();
 	
+}
+
+/*
+* The Constructor
+* Inputs :
+*      - k: Numbre of childs of the k2-trees
+*      - prof : the depth of the k2-tree
+*      - the Adjacency List of the graph
+*/
+
+k2_Trees::k2_Trees(int k, int n, std::vector<listAdjacence> A)
+	:k(k)
+{
+	prof = helpfunctions::logk(k, n);
+	int n1 = n;
+	if (n != pow(k, prof)) {
+		prof++;
+		n1 = pow(k, prof);
+	}
+	clock_t tStart = clock();
+	build_from_List(n1, 1, 0, 0, &A);
+	tExcexution = (double) (clock() - tStart) / CLOCKS_PER_SEC;
+	BuildTree();
+	T.clear();
+	T.shrink_to_fit();
 }
 
 
@@ -49,7 +70,7 @@ k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A)
     *      l: the current level,
     *      p: the row offset of the current submatrix
     *      q: the column offset
-    *      A: The matrix
+    *      A: The adjacency matrix
     *
 */
 
@@ -83,6 +104,57 @@ int k2_Trees::build_from_matrix(int n,int l,int p,int q, std::vector<boost::dyna
     return 1;
 }
 
+/*
+* Recursive construction of the k2-tree
+* Inputs :
+*      n: is the submatrix size,
+*      l: the current level,
+*      p: the row offset of the current submatrix
+*      q: the column offset
+*      A: The adjacency List
+*
+*/
+
+int k2_Trees::build_from_List(int n, int l, int p, int q, std::vector<listAdjacence> *A)
+{
+		boost::dynamic_bitset<> C{ 0 };
+		
+		// iterate over the matrix to build the
+		// T list
+		for (int i = 0; i<k; i++) {
+			for (int j = 0; j<k; j++) {
+				
+				if (l == prof) { //leaf node
+					
+					if (A->size() <= (p + i) || A->at(p+i).getList().size() == 0|| A->at(p + i).getNext() != (q + j)) C.push_back(false); 
+					else {
+						C.push_back(true);
+						A->at(p + i).advance();
+					}
+				}
+				else {
+					if (build_from_List(n / k, l + 1, p + i * (n / k), q + j * (n / k), A) == 0) C.push_back(false);
+					else C.push_back(true);
+				}
+			}
+		}
+
+		if (helpfunctions::all_null_C(C)) return 0;
+		// Verify if the current level Exist
+		if (T.size()<prof - l + 1)
+		{ // if not allocate space for Element
+			boost::dynamic_bitset<> C2{ 0 };
+			T.push_back(C2);
+		}
+
+		//Concatenate C to the T list of level l
+		for (boost::dynamic_bitset<>::size_type i = 0; i < C.size(); i++) {
+			T[prof - l].push_back(C[i]);
+		}
+		return 1;
+	
+}
+
 
 
 void k2_Trees::BuildTree(){
@@ -107,6 +179,11 @@ boost::dynamic_bitset<> k2_Trees::get_L(){
 
 boost::dynamic_bitset<> k2_Trees::get_T(){
     return _T;
+}
+
+double k2_Trees::get_Time()
+{
+	return  tExcexution;
 }
 
 

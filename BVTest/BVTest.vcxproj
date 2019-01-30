@@ -176,6 +176,7 @@
     <ClInclude Include="interval_sequence_iterator.hpp" />
     <ClInclude Include="iterator_wrappers.hpp" />
     <ClInclude Include="k2_Trees.hpp" />
+    <ClInclude Include="listAdjacence.h" />
     <ClInclude Include="logger.hpp" />
     <ClInclude Include="masked_iterator.hpp" />
     <ClInclude Include="merged_iterator.hpp" />
@@ -220,6 +221,7 @@
     <ClCompile Include="Ik2_trees.cpp" />
     <ClCompile Include="input_bitstream.cpp" />
     <ClCompile Include="k2_Trees.cpp" />
+    <ClCompile Include="listAdjacence.cpp" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="motorK2_trees.cpp" />
     <ClCompile Include="motor_pattern_extraction.cpp" />
