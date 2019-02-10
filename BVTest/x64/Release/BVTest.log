@@ -1,43 +1,12 @@
-﻿  DirectedGraph.cpp
-c:\users\hafsa\desktop\snap\glib-core\fl.h(396): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
-c:\users\hafsa\desktop\pro\bvtest\directedgraph.cpp(48): warning C4244: 'initialisation' : conversion de 'std::streamoff' en 'double', perte possible de données
-c:\users\hafsa\desktop\pro\bvtest\directedgraph.cpp(56): warning C4101: 'pourcentage2' : variable locale non référencée
-c:\users\hafsa\desktop\pro\bvtest\directedgraph.cpp(137): warning C4244: 'initialisation' : conversion de 'std::streamoff' en 'double', perte possible de données
-c:\users\hafsa\desktop\pro\bvtest\directedgraph.cpp(154): warning C4101: 'pourcentage2' : variable locale non référencée
-c:\users\hafsa\desktop\pro\bvtest\directedgraph.cpp(227): warning C4244: 'initialisation' : conversion de 'std::streamoff' en 'double', perte possible de données
-c:\users\hafsa\desktop\pro\bvtest\directedgraph.cpp(281): warning C4267: 'initialisation' : conversion de 'size_t' en 'int', perte possible de données
-c:\users\hafsa\desktop\pro\bvtest\directedgraph.cpp(243): warning C4101: 'pourcentage2' : variable locale non référencée
-c:\users\hafsa\desktop\snap\glib-core\ds.h(2148): warning C4244: 'argument' : conversion de 'int64' en 'const int', perte possible de données
-  c:\users\hafsa\desktop\snap\glib-core\ds.h(2146): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
-  c:\users\hafsa\desktop\snap\glib-core\xmath.h(167): note: voir la référence à l'instanciation de la fonction modèle 'PMom &TVVec<PMom,int>::At(const TSizeTy &,const TSizeTy &)' en cours de compilation
-          with
-          [
-              TSizeTy=int
-          ]
-  c:\users\hafsa\desktop\snap\glib-core\xmath.h(164): note: voir la référence à l'instanciation de classe modèle 'TVVec<PMom,int>' en cours de compilation
-c:\users\hafsa\desktop\snap\glib-core\ds.h(2145): warning C4244: 'argument' : conversion de 'int64' en 'const int', perte possible de données
-  c:\users\hafsa\desktop\snap\glib-core\ds.h(2143): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
-  c:\users\hafsa\desktop\snap\glib-core\xmath.h(233): note: voir la référence à l'instanciation de la fonction modèle 'const PMom &TVVec<PMom,int>::At(const TSizeTy &,const TSizeTy &) const' en cours de compilation
-          with
-          [
-              TSizeTy=int
-          ]
-c:\users\hafsa\desktop\snap\glib-core\ds.h(2138): warning C4244: 'return' : conversion de 'int64' en 'int', perte possible de données
-  c:\users\hafsa\desktop\snap\glib-core\ds.h(2138): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
-  c:\users\hafsa\desktop\snap\glib-core\xmath.h(212): note: voir la référence à l'instanciation de la fonction modèle 'int TVVec<PMom,int>::GetYDim(void) const' en cours de compilation
-c:\users\hafsa\desktop\snap\glib-core\ds.h(2137): warning C4244: 'return' : conversion de 'int64' en 'int', perte possible de données
-  c:\users\hafsa\desktop\snap\glib-core\ds.h(2137): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
-  c:\users\hafsa\desktop\snap\glib-core\xmath.h(211): note: voir la référence à l'instanciation de la fonction modèle 'int TVVec<PMom,int>::GetXDim(void) const' en cours de compilation
-c:\users\hafsa\desktop\snap\glib-core\ds.h(2136): warning C4244: 'argument' : conversion de 'int64' en 'const int', perte possible de données
-  c:\users\hafsa\desktop\snap\glib-core\ds.h(2134): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
-  c:\users\hafsa\desktop\snap\glib-core\xmath.h(164): note: voir la référence à l'instanciation de la fonction modèle 'void TVVec<PMom,int>::Gen(const TSizeTy &,const TSizeTy &)' en cours de compilation
-          with
-          [
-              TSizeTy=int
-          ]
-  Génération de code en cours
-  5 of 4949 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+﻿  Génération de code en cours
+c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(219): warning C4715: 'webgraph::bv_graph::graph::write_block_count' : les chemins de contrôle ne retournent pas tous une valeur
+c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(287): warning C4715: 'webgraph::bv_graph::graph::write_residual' : les chemins de contrôle ne retournent pas tous une valeur
+c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(189): warning C4715: 'webgraph::bv_graph::graph::write_reference' : les chemins de contrôle ne retournent pas tous une valeur
+c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(146): warning C4715: 'webgraph::bv_graph::graph::write_outdegree' : les chemins de contrôle ne retournent pas tous une valeur
+c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(120): warning C4715: 'webgraph::bv_graph::graph::write_offset' : les chemins de contrôle ne retournent pas tous une valeur
+c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(249): warning C4715: 'webgraph::bv_graph::graph::write_block' : les chemins de contrôle ne retournent pas tous une valeur
+  3658 of 4949 functions (73.9%) were compiled, the rest were copied from previous compilation.
+    1158 functions were new in current compilation
+    163 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   BVTest.vcxproj -> C:\Users\hafsa\Desktop\Pro\x64\Release\BVTest.exe
