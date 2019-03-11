@@ -8,7 +8,7 @@
 
 using namespace std ;
 /*
-    * The Constructor from tha adjacency matrix
+    * The Constructor
     * Inputs :
     *      - k: Numbre of childs of the k2-trees
     *      - prof : the depth of the k2-tree
@@ -25,10 +25,12 @@ k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A)
 		n1 = pow(k, prof);
 		helpfunctions::extend_matrix(&A, n1);
 	}
-	
+	clock_t tStart = clock();
+	build_from_matrix(n1, 1, 0, 0, A);
+	tExcexution = (double)(clock() - tStart) / CLOCKS_PER_SEC;
 	
 
-	build_from_matrix(n1, 1, 0, 0, A);
+	
     BuildTree();
     T.clear();
     T.shrink_to_fit();
@@ -36,7 +38,7 @@ k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A)
 }
 
 /*
-* The Constructor from the adjacency list
+* The Constructor
 * Inputs :
 *      - k: Numbre of childs of the k2-trees
 *      - prof : the depth of the k2-tree
@@ -55,6 +57,7 @@ k2_Trees::k2_Trees(int k, int n, std::vector<listAdjacence> A)
 	clock_t tStart = clock();
 	build_from_List(n1, 1, 0, 0, &A);
 	tExcexution = (double) (clock() - tStart) / CLOCKS_PER_SEC;
+	
 	BuildTree();
 	T.clear();
 	T.shrink_to_fit();
