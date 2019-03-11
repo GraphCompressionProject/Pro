@@ -46,7 +46,7 @@ public:
 		cout << "Le ratio de Compression est de :" << (graph.getNodes()*graph.getNodes()) / (tree.get_T().size() + tree.get_L().size()) << endl;
 		//cout << "Le gain d'espace :" << (double)100 * (1 - ((tree.get_T().size() + tree.get_L().size()) / (graph.getNodes()*graph.getNodes()))) << "%" << endl;
 		cout << "Le nombre de bit par noeuds :" << (double)(tree.get_T().size() + tree.get_L().size()) / graph.getNodes() << endl;
-		cout << "Le temps de Compression est de :" << (double) tree.get_Time() << endl;
+		cout << "Le temps de Compression est de :" << (double)tree.get_Time() << endl;
 	};
 
 	void compressGraphK2StatFromListe(const char* graphName, int k) {
@@ -70,16 +70,30 @@ public:
 
 	void compressGraphInterK2(const char* graphName, int k) {
 		DynamicGraph graph(graphName);
-		
+
+		Ik2_Trees tree(k, graph.getTimstemps(), graph.getNodes(), 0, graph.getMatrix());
+		cout << "========================================================" << endl;
+		std::fixed;
+
+		cout << "Le ratio de Compression est de :" << (graph.getNodes()*graph.getNodes()*graph.getTimstemps()) / (tree.get_T().size() + tree.get_L().size()) << endl;
+		//cout << "Le gain d'espace :" << (double) 1 - ((tree.get_T().size() + tree.get_L().size()) / (graph.getNodes()*graph.getNodes())) << endl;
+		cout << "Le nombre de bit par noeuds :" << (double)(tree.get_T().size() + tree.get_L().size()) / graph.getNodes() << endl;
+		cout << "Le temps de Compression est de :" << (double)tree.get_Time() << endl;
+
 	};
 
 	void compressGraphDiffInterK2(const char* graphName, int k) {
 		DynamicGraph graph(graphName);
+		cout << "========================================================" << endl;
 		Ik2_Trees tree(k, graph.getTimstemps(), graph.getNodes(), 1, graph.getMatrix());
-		cout << "T = " << tree.get_T() << endl;
-		cout << "L = " << tree.get_L() << endl;
+		cout << "========================================================" << endl;
+		std::fixed;
+		cout << "Le ratio de Compression est de :" << (graph.getNodes()*graph.getNodes()*graph.getTimstemps()) / (tree.get_T().size() + tree.get_L().size()) << endl;
+		//cout << "Le gain d'espace :" << (double) 1 - ((tree.get_T().size() + tree.get_L().size()) / (graph.getNodes()*graph.getNodes())) << endl;
+		cout << "Le nombre de bit par noeuds :" << (double)(tree.get_T().size() + tree.get_L().size()) / graph.getNodes() << endl;
+		cout << "Le temps de Compression est de :" << (double)tree.get_Time() << endl;
+		
 	};
 
 	
 };
-
