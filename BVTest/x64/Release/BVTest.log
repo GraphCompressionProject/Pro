@@ -1,12 +1,8 @@
-﻿  Génération de code en cours
-c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(219): warning C4715: 'webgraph::bv_graph::graph::write_block_count' : les chemins de contrôle ne retournent pas tous une valeur
-c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(287): warning C4715: 'webgraph::bv_graph::graph::write_residual' : les chemins de contrôle ne retournent pas tous une valeur
-c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(189): warning C4715: 'webgraph::bv_graph::graph::write_reference' : les chemins de contrôle ne retournent pas tous une valeur
-c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(146): warning C4715: 'webgraph::bv_graph::graph::write_outdegree' : les chemins de contrôle ne retournent pas tous une valeur
-c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(120): warning C4715: 'webgraph::bv_graph::graph::write_offset' : les chemins de contrôle ne retournent pas tous une valeur
-c:\users\hafsa\desktop\pro\bvtest\webgraph.cpp(249): warning C4715: 'webgraph::bv_graph::graph::write_block' : les chemins de contrôle ne retournent pas tous une valeur
-  3658 of 4949 functions (73.9%) were compiled, the rest were copied from previous compilation.
-    1158 functions were new in current compilation
-    163 functions had inline decision re-evaluated but remain unchanged
+﻿  Discoverer.cpp
+c:\users\hafsa\desktop\pro\bvtest\subdue\label.hpp(43): warning C4244: 'return' : conversion de 'double' en 'unsigned long', perte possible de données
+  Génération de code en cours
+  4 of 2989 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    1 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   BVTest.vcxproj -> C:\Users\hafsa\Desktop\Pro\x64\Release\BVTest.exe

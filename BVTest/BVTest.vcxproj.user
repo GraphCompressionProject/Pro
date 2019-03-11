@@ -6,7 +6,8 @@
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LocalDebuggerCommand>$(TargetPath);D:\Matlab\bin\win64</LocalDebuggerCommand>
+    <LocalDebuggerCommand>C:\Users\hafsa\Desktop\Pro\x64\Release\BVTest.exe</LocalDebuggerCommand>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+    <LocalDebuggerCommandArguments>-compress  C:\Users\hafsa\Desktop\Pro\BVTest\data\graphs\sample.g</LocalDebuggerCommandArguments>
   </PropertyGroup>
 </Project>

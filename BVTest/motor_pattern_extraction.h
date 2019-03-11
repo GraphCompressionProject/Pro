@@ -3,6 +3,9 @@
 #include <string>
 #include "DirectedGraph.h"
 #include "gcupm.h"
+#include "subdue\Subdue.hpp"
+
+
 class motor_pattern_extraction
 {
 public:
@@ -13,6 +16,13 @@ public:
 	{
 		if (type == "GCUPM") compressGraphUPM(graphName, patternSize, modelType);
 	};
+
+	void compressGraph(int argc, char * argv[])
+	{
+		Subdue sbd;
+		sbd.main(argc, argv);
+	};
+
 
 	void compressGraphUPM(const char* graphName, int patternSize, int modelType) {
 		DirectedGraph graph(graphName);

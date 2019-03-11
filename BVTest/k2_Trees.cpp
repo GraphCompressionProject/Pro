@@ -8,7 +8,7 @@
 
 using namespace std ;
 /*
-    * The Constructor
+    * The Constructor from tha adjacency matrix
     * Inputs :
     *      - k: Numbre of childs of the k2-trees
     *      - prof : the depth of the k2-tree
@@ -36,7 +36,7 @@ k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A)
 }
 
 /*
-* The Constructor
+* The Constructor from the adjacency list
 * Inputs :
 *      - k: Numbre of childs of the k2-trees
 *      - prof : the depth of the k2-tree

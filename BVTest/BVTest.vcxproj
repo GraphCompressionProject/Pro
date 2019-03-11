@@ -151,6 +151,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Matlab\extern\include;.\..\..\boost;..\snap\snap-adv;.\..\..\snap\glib-core;.\..\..\snap\snap-core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -201,6 +202,47 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="singleton_resource_manager.hpp" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="subdue\AvlAllocator.hpp" />
+    <ClInclude Include="subdue\AvlNode.hpp" />
+    <ClInclude Include="subdue\AvlTable.hpp" />
+    <ClInclude Include="subdue\AvlTableNode.hpp" />
+    <ClInclude Include="subdue\AvlTraverser.hpp" />
+    <ClInclude Include="subdue\AvlTreeList.hpp" />
+    <ClInclude Include="subdue\Compressor.hpp" />
+    <ClInclude Include="subdue\Discoverer.hpp" />
+    <ClInclude Include="subdue\GraphWriter.hpp" />
+    <ClInclude Include="subdue\Increment.hpp" />
+    <ClInclude Include="subdue\IncrementList.hpp" />
+    <ClInclude Include="subdue\IncrementListNode.hpp" />
+    <ClInclude Include="subdue\Instance.hpp" />
+    <ClInclude Include="subdue\InstanceList.hpp" />
+    <ClInclude Include="subdue\InstanceListNode.hpp" />
+    <ClInclude Include="subdue\InstanceVertexList.hpp" />
+    <ClInclude Include="subdue\Label.hpp" />
+    <ClInclude Include="subdue\LabeledEdge.hpp" />
+    <ClInclude Include="subdue\LabeledGraph.hpp" />
+    <ClInclude Include="subdue\LabeledVertex.hpp" />
+    <ClInclude Include="subdue\LabelList.hpp" />
+    <ClInclude Include="subdue\Labval.hpp" />
+    <ClInclude Include="subdue\List.hpp" />
+    <ClInclude Include="subdue\ListNode.hpp" />
+    <ClInclude Include="subdue\MatchHeap.hpp" />
+    <ClInclude Include="subdue\MatchHeapNode.hpp" />
+    <ClInclude Include="subdue\mdl_main.hpp" />
+    <ClInclude Include="subdue\Params.hpp" />
+    <ClInclude Include="subdue\ReferenceEdge.hpp" />
+    <ClInclude Include="subdue\ReferenceGraph.hpp" />
+    <ClInclude Include="subdue\ReferenceVertex.hpp" />
+    <ClInclude Include="subdue\RefInstanceList.hpp" />
+    <ClInclude Include="subdue\RefInstanceListNode.hpp" />
+    <ClInclude Include="subdue\Subdue.hpp" />
+    <ClInclude Include="subdue\SubList.hpp" />
+    <ClInclude Include="subdue\SubListNode.hpp" />
+    <ClInclude Include="subdue\Substructure.hpp" />
+    <ClInclude Include="subdue\Tester.hpp" />
+    <ClInclude Include="subdue\Tester_main.hpp" />
+    <ClInclude Include="subdue\utility.hpp" />
+    <ClInclude Include="subdue\VertexMap.hpp" />
     <ClInclude Include="SuperGraph.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TextTable.h" />
@@ -240,6 +282,46 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="subdue\AvlAllocator.cpp" />
+    <ClCompile Include="subdue\AvlNode.cpp" />
+    <ClCompile Include="subdue\AvlTable.cpp" />
+    <ClCompile Include="subdue\AvlTableNode.cpp" />
+    <ClCompile Include="subdue\AvlTraverser.cpp" />
+    <ClCompile Include="subdue\AvlTreeList.cpp" />
+    <ClCompile Include="subdue\Compressor.cpp" />
+    <ClCompile Include="subdue\Discoverer.cpp" />
+    <ClCompile Include="subdue\GraphWriter.cpp" />
+    <ClCompile Include="subdue\Increment.cpp" />
+    <ClCompile Include="subdue\IncrementList.cpp" />
+    <ClCompile Include="subdue\IncrementListNode.cpp" />
+    <ClCompile Include="subdue\Instance.cpp" />
+    <ClCompile Include="subdue\InstanceList.cpp" />
+    <ClCompile Include="subdue\InstanceListNode.cpp" />
+    <ClCompile Include="subdue\InstanceVertexList.cpp" />
+    <ClCompile Include="subdue\Label.cpp" />
+    <ClCompile Include="subdue\LabeledEdge.cpp" />
+    <ClCompile Include="subdue\LabeledGraph.cpp" />
+    <ClCompile Include="subdue\LabeledVertex.cpp" />
+    <ClCompile Include="subdue\LabelList.cpp" />
+    <ClCompile Include="subdue\Labval.cpp" />
+    <ClCompile Include="subdue\List.cpp" />
+    <ClCompile Include="subdue\ListNode.cpp" />
+    <ClCompile Include="subdue\MatchHeap.cpp" />
+    <ClCompile Include="subdue\MatchHeapNode.cpp" />
+    <ClCompile Include="subdue\mdl_main.cpp" />
+    <ClCompile Include="subdue\Params.cpp" />
+    <ClCompile Include="subdue\ReferenceEdge.cpp" />
+    <ClCompile Include="subdue\ReferenceGraph.cpp" />
+    <ClCompile Include="subdue\ReferenceVertex.cpp" />
+    <ClCompile Include="subdue\RefInstanceList.cpp" />
+    <ClCompile Include="subdue\RefInstanceListNode.cpp" />
+    <ClCompile Include="subdue\Subdue.cpp" />
+    <ClCompile Include="subdue\SubList.cpp" />
+    <ClCompile Include="subdue\SubListNode.cpp" />
+    <ClCompile Include="subdue\Substructure.cpp" />
+    <ClCompile Include="subdue\Tester.cpp" />
+    <ClCompile Include="subdue\Tester_main.cpp" />
+    <ClCompile Include="subdue\VertexMap.cpp" />
     <ClCompile Include="SuperGraph.cpp" />
     <ClCompile Include="UndirectedGraph.cpp" />
     <ClCompile Include="vertex.cpp" />
@@ -251,6 +333,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="subdue\CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
