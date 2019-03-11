@@ -9,6 +9,15 @@ UndirectedGraph::UndirectedGraph(const char* fileName)
 	PUNGraph G = TUNGraph::Load(FIn);
 	graph = G;
 }
+
+UndirectedGraph::UndirectedGraph(string fileName)
+{
+	
+}
+
+
+
+
 UndirectedGraph::UndirectedGraph(PUNGraph& G)
 {
 	graph = G;

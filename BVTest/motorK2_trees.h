@@ -46,7 +46,7 @@ public:
 		cout << "Le ratio de Compression est de :" << (graph.getNodes()*graph.getNodes()) / (tree.get_T().size() + tree.get_L().size()) << endl;
 		//cout << "Le gain d'espace :" << (double)100 * (1 - ((tree.get_T().size() + tree.get_L().size()) / (graph.getNodes()*graph.getNodes()))) << "%" << endl;
 		cout << "Le nombre de bit par noeuds :" << (double)(tree.get_T().size() + tree.get_L().size()) / graph.getNodes() << endl;
-		cout << "Le temps de Compression est de :" << (double)tree.get_Time() << endl;
+		cout << "Le temps de Compression est de :" << (double) tree.get_Time() << endl;
 	};
 
 	void compressGraphK2StatFromListe(const char* graphName, int k) {

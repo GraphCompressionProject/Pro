@@ -10,6 +10,9 @@ public:
 
 public:
 	UndirectedGraph(const char* fileName);
+
+	UndirectedGraph(string fileName);
+
 	UndirectedGraph(PUNGraph& G);
 
 	int getNumNodes();
