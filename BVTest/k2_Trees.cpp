@@ -14,16 +14,16 @@ using namespace std ;
     *      - prof : the depth of the k2-tree
     *      - the Adjacency Matrix of the graph
     */
-k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A)
-    :k(k)
+k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A, bool isDirected)
+    :k(k),  isDirected(isDirected), original_size (n)
 {
     prof = helpfunctions::logk(k,n);
 	int n1 = n;
 	
 	if (n != pow(k, prof)) {
 		prof++;
+		cout << "Profondeur :" << prof << endl;
 		n1 = pow(k, prof);
-		helpfunctions::extend_matrix(&A, n1);
 	}
 	clock_t tStart = clock();
 	build_from_matrix(n1, 1, 0, 0, A);
@@ -32,6 +32,13 @@ k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A)
 
 	
     BuildTree();
+	cout << "T :" << _T << endl;
+	cout << "L :" << _L << endl;
+
+	getDirect(4, 2, 0, -1);
+	getReverse(4, 2, 0, -1);
+
+
     T.clear();
     T.shrink_to_fit();
 	
@@ -45,8 +52,8 @@ k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A)
 *      - the Adjacency List of the graph
 */
 
-k2_Trees::k2_Trees(int k, int n, std::vector<listAdjacence> A)
-	:k(k)
+k2_Trees::k2_Trees(int k, int n, std::vector<listAdjacence> A,bool isDirected)
+	:k(k), isDirected(isDirected), original_size(n)
 {
 	prof = helpfunctions::logk(k, n);
 	int n1 = n;
@@ -59,10 +66,150 @@ k2_Trees::k2_Trees(int k, int n, std::vector<listAdjacence> A)
 	tExcexution = (double) (clock() - tStart) / CLOCKS_PER_SEC;
 	
 	BuildTree();
+
 	T.clear();
 	T.shrink_to_fit();
 }
 
+
+/*
+* The Constructor
+* Inputs :
+*      - k: Numbre of childs of the k2-trees
+*      - prof : the depth of the k2-tree
+*      - the directed Graph
+*/
+
+k2_Trees::k2_Trees(int k, int n, DirectedGraph G)
+	:k(k),  original_size(n)
+{
+	isDirected = 1;
+	prof = helpfunctions::logk(k, n);
+	int n1 = n;
+	if (n != pow(k, prof)) {
+		prof++;
+		n1 = pow(k, prof);
+	}
+	cout << n <<"   "<<k<< endl;
+	clock_t tStart = clock();
+	build_from_Graph(n1, 1, 0, 0, G);
+	tExcexution = (double)(clock() - tStart) / CLOCKS_PER_SEC;
+
+	BuildTree();
+
+	T.clear();
+	T.shrink_to_fit();
+}
+
+
+/*
+* The Constructor
+* Inputs :
+*      - k: Numbre of childs of the k2-trees
+*      - prof : the depth of the k2-tree
+*      - the directed Graph
+*/
+
+k2_Trees::k2_Trees(int k, int n, DirectedGraph G,vector<int> order)
+	:k(k), original_size(n)
+{
+	isDirected = 1;
+	prof = helpfunctions::logk(k, n);
+	int n1 = n;
+	if (n != pow(k, prof)) {
+		prof++;
+		n1 = pow(k, prof);
+	}
+	cout << n << "   " << k << endl;
+	clock_t tStart = clock();
+	build_from_Graph(n1, 1, 0, 0, G,order);
+	tExcexution = (double)(clock() - tStart) / CLOCKS_PER_SEC;
+
+	BuildTree();
+
+	T.clear();
+	T.shrink_to_fit();
+}
+
+/*
+* Recursive construction of the k2-tree
+* Inputs :
+*      n: is the submatrix size,
+*      l: the current level,
+*      p: the row offset of the current submatrix
+*      q: the column offset
+*      A: The adjacency matrix
+*
+*/
+
+int k2_Trees::build_from_Graph(int n, int l, int p, int q, DirectedGraph G) {
+
+
+
+	boost::dynamic_bitset<> C{ 0 };
+	// iterate over the matrix to build the
+	// T list
+	for (int i = 0; i<k; i++) {
+		for (int j = 0; j<k; j++) {
+			if (l == prof) { //leaf node
+				if ((i + p >= original_size) || (q + j >= original_size) || !G.edgeBetween(p + i,q + j) ) C.push_back(false);
+				else C.push_back(true);
+			}
+			else {
+				if (build_from_Graph(n / k, l + 1, p + i * (n / k), q + j * (n / k), G) == 0) C.push_back(false);
+				else C.push_back(true);
+			}
+		}
+	}
+	if (helpfunctions::all_null_C(C)) return 0;
+	// Verify if the current level Exist
+	if (T.size()<prof - l + 1)
+	{ // if not allocate space for Element
+		boost::dynamic_bitset<> C2{ 0 };
+		T.push_back(C2);
+	}
+
+	//Concatenate C to the T list of level l
+	for (boost::dynamic_bitset<>::size_type i = 0; i < C.size(); i++) {
+		T[prof - l].push_back(C[i]);
+	}
+	return 1;
+}
+
+int k2_Trees::build_from_Graph(int n, int l, int p, int q, DirectedGraph G, vector<int> order)
+{
+
+	boost::dynamic_bitset<> C{ 0 };
+	// iterate over the matrix to build the
+	// T list
+	for (int i = 0; i<k; i++) {
+		for (int j = 0; j<k; j++) {
+			if (l == prof) { //leaf node
+				int src = order[i + p];
+				int dst = order[q + j];
+				if ( !G.edgeBetween(src, dst)) C.push_back(false);
+				else C.push_back(true);
+			}
+			else {
+				if (build_from_Graph(n / k, l + 1, p + i * (n / k), q + j * (n / k), G,order) == 0) C.push_back(false);
+				else C.push_back(true);
+			}
+		}
+	}
+	if (helpfunctions::all_null_C(C)) return 0;
+	// Verify if the current level Exist
+	if (T.size()<prof - l + 1)
+	{ // if not allocate space for Element
+		boost::dynamic_bitset<> C2{ 0 };
+		T.push_back(C2);
+	}
+
+	//Concatenate C to the T list of level l
+	for (boost::dynamic_bitset<>::size_type i = 0; i < C.size(); i++) {
+		T[prof - l].push_back(C[i]);
+	}
+	return 1;
+}
 
 
 
@@ -84,7 +231,7 @@ int k2_Trees::build_from_matrix(int n,int l,int p,int q, std::vector<boost::dyna
     for(int i=0;i<k;i++){
         for(int j=0;j<k;j++){
             if (l == prof) { //leaf node
-                if(A[p+i][q+j] == 0) C.push_back(false);
+                if((i+p >= original_size)||(q+j >= original_size)||(A[p+i][q+j] == 0)) C.push_back(false);
                 else C.push_back(true);
             }else{
                 if(build_from_matrix(n/k,l+1,p+i*(n/k),q+j*(n/k),A) == 0) C.push_back(false);
@@ -129,10 +276,11 @@ int k2_Trees::build_from_List(int n, int l, int p, int q, std::vector<listAdjace
 				
 				if (l == prof) { //leaf node
 					
-					if (A->size() <= (p + i) || A->at(p+i).getList().size() == 0|| A->at(p + i).getNext() != (q + j)) C.push_back(false); 
+					if (  A->size() <= (p + i) || A->at(p+i).getList().size() == 0|| A->at(p + i).getNext() != (q + j)) C.push_back(false);
 					else {
 						C.push_back(true);
 						A->at(p + i).advance();
+						cout << p+i  << endl;
 					}
 				}
 				else {
@@ -203,6 +351,21 @@ double k2_Trees::get_Time()
  *            trees do not represent the root node)
  */
 
+void k2_Trees::getDirect(int n, int  p, int  q, int  x) {
+	
+	Direct(n, p, q, x);
+	if (!isDirected) Reverse(n, p, q, x);
+
+}
+
+void k2_Trees::getReverse(int n, int  p, int  q, int  x) {
+
+	Reverse(n, p, q, x);
+	if (!isDirected) Direct(n, p, q, x);
+
+}
+
+
 void k2_Trees::Direct(int n,int  p,int  q,int  x){
     int v = _T.size() ;
     if(v - x <= 0) //leaf
@@ -219,6 +382,7 @@ void k2_Trees::Direct(int n,int  p,int  q,int  x){
             }
         }
     }
+
 }
 
 /* 
@@ -246,4 +410,5 @@ void k2_Trees::Reverse(int n,int  q,int  p,int  x){
             }
         }
     }
+
 }

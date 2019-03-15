@@ -36,8 +36,11 @@ DirectedGraph::DirectedGraph(bool empty, int n, int m, string fileName)
 DirectedGraph::DirectedGraph(const char* fileName, int load)
 {
 	this->fileName =  fileName;
+	cout << "reading the graph" << endl;
 	if (load == 1)
 	{
+		cout << "reading the graph" << endl;
+
 		graph = TNGraph::New();
 
 		string line;

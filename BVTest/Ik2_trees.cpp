@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "Ik2_Trees.hpp"
 
 using namespace std ;
@@ -6,52 +6,63 @@ using namespace std ;
 Ik2_Trees::Ik2_Trees(int k,int nbT, int n,bool diff, vector<vector<boost::dynamic_bitset<>>> A )
     :k(k),nbT(nbT)
 {
+	isDirected = 1;
     prof = helpfunctions::logk(k,n);
 	if (!diff)
 	{
 		clock_t tStart = clock();
 		build_from_matrix(n, 1, 0, 0, A);
 		tExec = (double)(clock() - tStart) / CLOCKS_PER_SEC;
-
-		
 	}
     else {
         //Building the matrix of differences
 		vector<vector<boost::dynamic_bitset<>>> B ;
 		clock_t tStart = clock();
-		cout << "hhhhhh";
-        CalcDiff(A,B);
+        B= CalcDiff(A);
         // Building the Ik2Tree
 		cout<< "lllll";
 		build_from_matrix(n, 1, 0, 0, B);
-		cout<< "hhmmmm";
 		tExec = (double)(clock() - tStart) / CLOCKS_PER_SEC;
 		cout << tExec << endl;
     }
 	
      BuildTree();
+
      T.clear();
      T.shrink_to_fit();
 }
 
-void Ik2_Trees::CalcDiff(vector<vector<boost::dynamic_bitset<>>> A, vector<vector<boost::dynamic_bitset<>>> B) {
-	for (int m = 0; m < A.size(); m++) {
-	for (int i = 0; i < A[m].size(); i++) {
-		for (int j = 0; j < A[m][i].size(); j++) {
-			
-			B[m][i].push_back(A[m][i][j]);
-				 
-			}
+vector<vector<boost::dynamic_bitset<>>>  Ik2_Trees::CalcDiff(vector<vector<boost::dynamic_bitset<>>> A) {
+	vector<vector<boost::dynamic_bitset<>>> B;
+
+	vector<boost::dynamic_bitset<>> tmp1{ 0 };
+
+	boost::dynamic_bitset<> tmp2{ 0,0 };
+
+	for (int m = 0; m < A.size(); m++)
+	{
+		vector<boost::dynamic_bitset<>> vect;
+		for (int i = 0; i < A[m].size(); i++)
+		{
+			boost::dynamic_bitset<> c{ 0,0};
+			for (int j = 0; j < A[m].size(); j++)
+				c.push_back(A[m][i][j]);
+
+			vect.push_back(c);
 		}
+		B.push_back(vect);
 	}
-    for(int i=0;i<A.size();i++){
-        for(int j=0;j<A[i].size();j++){
-            for(int m=0;m<A[i][j].size();m++){
-                if((A[m][i][j]!=A[m-1][i][j]) || (m==0)) B[m][i][j] =1;
-                else B[m][i][j] =0;
+		
+				
+    for(int m=1 ; m<A.size() ; m++){
+        for(int i=0; i<A[m].size() ; i++){
+            for(int j=0 ; j<A[m].size() ; j++){
+			   B[m][i][j] = (A[m][i][j] != A[m - 1][i][j]) ? 1 : 0;
             }
         }
     }
+
+	return B;
 }
 
 boost::dynamic_bitset<> Ik2_Trees::build_from_matrix(int n,int l,int p,int q, vector<vector<boost::dynamic_bitset<>>> A ){
@@ -130,6 +141,11 @@ double Ik2_Trees::get_Time()
 	return tExec;
 }
 
+
+
 boost::dynamic_bitset<> Ik2_Trees::get_T(){
     return _T;
 }
+
+
+

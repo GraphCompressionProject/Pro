@@ -13,6 +13,8 @@
 #include <direct.h>
 
 
+#include <fstream>
+
 
 
 using namespace std;
@@ -29,7 +31,7 @@ public:
 	~Order() {}
 
 
-	void RandomOrder(DirectedGraph & G)
+	vector<int> RandomOrder(DirectedGraph & G)
 	{
 		vector<int> a;
 		for (TNGraph::TNodeI NI = G.getNodeIteratorBegin(); NI< G.getNodeIteratorEnd(); NI++)
@@ -41,9 +43,10 @@ public:
 		random_shuffle(std::begin(a), std::end(a));
 		saveOrderedGraph(G, a, "RandomOrder_");
 		cout << "Random Order accomplished." << endl;
+		return a;
 
 	}		
-	void lexicographicalOrder(DirectedGraph & G)
+	vector<int> lexicographicalOrder(DirectedGraph & G)
 	{
 		vector<int> a;
 		for (TNGraph::TNodeI NI = G.getNodeIteratorBegin(); NI< G.getNodeIteratorEnd(); NI++)
@@ -56,8 +59,9 @@ public:
 		std::sort(a.begin(), a.end(),   bind(&Order::lexicographicalComparator, this, _1, _2));
 		saveOrderedGraph(G, a, "lexicographicalOrder_");
 		cout << "Lexicographical Order accomplished" << endl;	
+		return a;
 	}	
-	void GrayOrder(DirectedGraph & G)
+	vector<int> GrayOrder(DirectedGraph & G)
 	{
 		vector<int> a;
 		for (TNGraph::TNodeI NI = G.getNodeIteratorBegin(); NI< G.getNodeIteratorEnd(); NI++)
@@ -69,11 +73,11 @@ public:
 		std::sort(a.begin(), a.end(), bind(&Order::GrayComparator, this, _1, _2));
 		saveOrderedGraph(G, a, "GrayOrder_");
 		cout << "Gray Order accomplished" << endl;
-
+		return a;
 		
 
 	}
-	void DfsOrder(DirectedGraph & G)
+	vector <int> DfsOrder(DirectedGraph & G)
 	{   
 		vector <int> order;
 		map<int, bool> a; 
@@ -118,9 +122,10 @@ public:
 		
 		cout << "DFS Order of the graph in process ..." << endl;
 		saveOrderedGraph(G, order, "DfsOrder_");
-		cout << "DFS Order accomplished" << endl;		
+		cout << "DFS Order accomplished" << endl;
+		return order;
 	}
-	void BfsOrder(DirectedGraph & G) {
+	vector <int> BfsOrder(DirectedGraph & G) {
 
 		
 		vector <int> order;
@@ -173,7 +178,7 @@ public:
 		cout << "BFS Order of the graph in process ..." << endl;
 		saveOrderedGraph(G, order, "BfsOrder_");
 		cout << "BFS Order accomplished" << endl;
-
+		return order;
 	}
 	
 
@@ -248,6 +253,9 @@ private:
 			if (val == -1) { cerr << "Path Error ..." << endl; exit(0); }
 			else { mkdir((folder1 + folder2).c_str()); }
 		}
+		
+
+
 
 		myfile.open(folder1 + folder2 + "\\" + OrderName + G.fileName +".txt" , ios::out);
 		string line;
