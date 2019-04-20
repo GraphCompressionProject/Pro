@@ -8,6 +8,6 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LocalDebuggerCommand>C:\Users\hafsa\Desktop\Pro\x64\Release\BVTest.exe</LocalDebuggerCommand>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
-    <LocalDebuggerCommandArguments>3 web-polblogs Graph 2 0</LocalDebuggerCommandArguments>
+    <LocalDebuggerCommandArguments>4 Test_stat DSM 3</LocalDebuggerCommandArguments>
   </PropertyGroup>
 </Project>

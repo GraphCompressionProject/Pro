@@ -14,9 +14,79 @@ c:\users\hafsa\desktop\pro\bvtest\motork2_trees.h(65): warning C4551: liste d'ar
 c:\users\hafsa\desktop\pro\bvtest\motork2_trees.h(80): warning C4551: liste d'arguments manquante dans l'appel de fonction
 c:\users\hafsa\desktop\pro\bvtest\motork2_trees.h(103): warning C4551: liste d'arguments manquante dans l'appel de fonction
 c:\users\hafsa\desktop\pro\bvtest\motork2_trees.h(116): warning C4551: liste d'arguments manquante dans l'appel de fonction
-c:\users\hafsa\desktop\pro\bvtest\motork2_trees.h(130): warning C4551: liste d'arguments manquante dans l'appel de fonction
-c:\users\hafsa\desktop\pro\bvtest\motor_pattern_extraction.h(38): warning C4551: liste d'arguments manquante dans l'appel de fonction
-c:\users\hafsa\desktop\pro\bvtest\bvtest.cpp(78): warning C4551: liste d'arguments manquante dans l'appel de fonction
+c:\users\hafsa\desktop\pro\bvtest\motork2_trees.h(131): warning C4551: liste d'arguments manquante dans l'appel de fonction
+c:\users\hafsa\desktop\pro\bvtest\dsm\minhash.hpp(57): warning C4244: 'initialisation' : conversion de 'std::chrono::system_clock::rep' en 'unsigned int', perte possible de données
+c:\users\hafsa\desktop\pro\bvtest\dsm\minhash.hpp(153): warning C4554: '&' : vérifiez la priorité des opérateurs comme cause possible d'erreur ; utilisez des parenthèses pour rendre plus claires les priorités
+c:\users\hafsa\desktop\pro\bvtest\dsm\minhash.hpp(162): warning C4554: '&' : vérifiez la priorité des opérateurs comme cause possible d'erreur ; utilisez des parenthèses pour rendre plus claires les priorités
+c:\users\hafsa\desktop\pro\bvtest\motor_pattern_extraction.h(51): warning C4551: liste d'arguments manquante dans l'appel de fonction
+c:\users\hafsa\desktop\pro\bvtest\bvtest.cpp(66): warning C4551: liste d'arguments manquante dans l'appel de fonction
+c:\users\hafsa\desktop\snap\glib-core\ds.h(2148): warning C4244: 'argument' : conversion de 'int64' en 'const int', perte possible de données
+  c:\users\hafsa\desktop\snap\glib-core\ds.h(2146): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(167): note: voir la référence à l'instanciation de la fonction modèle 'PMom &TVVec<PMom,int>::At(const TSizeTy &,const TSizeTy &)' en cours de compilation
+          with
+          [
+              TSizeTy=int
+          ]
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(164): note: voir la référence à l'instanciation de classe modèle 'TVVec<PMom,int>' en cours de compilation
+c:\users\hafsa\desktop\snap\glib-core\ds.h(2145): warning C4244: 'argument' : conversion de 'int64' en 'const int', perte possible de données
+  c:\users\hafsa\desktop\snap\glib-core\ds.h(2143): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(233): note: voir la référence à l'instanciation de la fonction modèle 'const PMom &TVVec<PMom,int>::At(const TSizeTy &,const TSizeTy &) const' en cours de compilation
+          with
+          [
+              TSizeTy=int
+          ]
+c:\users\hafsa\desktop\snap\glib-core\ds.h(2138): warning C4244: 'return' : conversion de 'int64' en 'int', perte possible de données
+  c:\users\hafsa\desktop\snap\glib-core\ds.h(2138): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(212): note: voir la référence à l'instanciation de la fonction modèle 'int TVVec<PMom,int>::GetYDim(void) const' en cours de compilation
+c:\users\hafsa\desktop\snap\glib-core\ds.h(2137): warning C4244: 'return' : conversion de 'int64' en 'int', perte possible de données
+  c:\users\hafsa\desktop\snap\glib-core\ds.h(2137): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(211): note: voir la référence à l'instanciation de la fonction modèle 'int TVVec<PMom,int>::GetXDim(void) const' en cours de compilation
+c:\users\hafsa\desktop\snap\glib-core\ds.h(2136): warning C4244: 'argument' : conversion de 'int64' en 'const int', perte possible de données
+  c:\users\hafsa\desktop\snap\glib-core\ds.h(2134): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(164): note: voir la référence à l'instanciation de la fonction modèle 'void TVVec<PMom,int>::Gen(const TSizeTy &,const TSizeTy &)' en cours de compilation
+          with
+          [
+              TSizeTy=int
+          ]
+  dsm.cpp
+c:\users\hafsa\desktop\snap\glib-core\fl.h(396): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
+c:\users\hafsa\desktop\pro\bvtest\dsm\minhash.hpp(57): warning C4244: 'initialisation' : conversion de 'std::chrono::system_clock::rep' en 'unsigned int', perte possible de données
+c:\users\hafsa\desktop\pro\bvtest\dsm\minhash.hpp(153): warning C4554: '&' : vérifiez la priorité des opérateurs comme cause possible d'erreur ; utilisez des parenthèses pour rendre plus claires les priorités
+c:\users\hafsa\desktop\pro\bvtest\dsm\minhash.hpp(162): warning C4554: '&' : vérifiez la priorité des opérateurs comme cause possible d'erreur ; utilisez des parenthèses pour rendre plus claires les priorités
+c:\users\hafsa\desktop\snap\glib-core\ds.h(2148): warning C4244: 'argument' : conversion de 'int64' en 'const int', perte possible de données
+  c:\users\hafsa\desktop\snap\glib-core\ds.h(2146): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(167): note: voir la référence à l'instanciation de la fonction modèle 'PMom &TVVec<PMom,int>::At(const TSizeTy &,const TSizeTy &)' en cours de compilation
+          with
+          [
+              TSizeTy=int
+          ]
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(164): note: voir la référence à l'instanciation de classe modèle 'TVVec<PMom,int>' en cours de compilation
+c:\users\hafsa\desktop\snap\glib-core\ds.h(2145): warning C4244: 'argument' : conversion de 'int64' en 'const int', perte possible de données
+  c:\users\hafsa\desktop\snap\glib-core\ds.h(2143): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(233): note: voir la référence à l'instanciation de la fonction modèle 'const PMom &TVVec<PMom,int>::At(const TSizeTy &,const TSizeTy &) const' en cours de compilation
+          with
+          [
+              TSizeTy=int
+          ]
+c:\users\hafsa\desktop\snap\glib-core\ds.h(2138): warning C4244: 'return' : conversion de 'int64' en 'int', perte possible de données
+  c:\users\hafsa\desktop\snap\glib-core\ds.h(2138): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(212): note: voir la référence à l'instanciation de la fonction modèle 'int TVVec<PMom,int>::GetYDim(void) const' en cours de compilation
+c:\users\hafsa\desktop\snap\glib-core\ds.h(2137): warning C4244: 'return' : conversion de 'int64' en 'int', perte possible de données
+  c:\users\hafsa\desktop\snap\glib-core\ds.h(2137): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(211): note: voir la référence à l'instanciation de la fonction modèle 'int TVVec<PMom,int>::GetXDim(void) const' en cours de compilation
+c:\users\hafsa\desktop\snap\glib-core\ds.h(2136): warning C4244: 'argument' : conversion de 'int64' en 'const int', perte possible de données
+  c:\users\hafsa\desktop\snap\glib-core\ds.h(2134): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
+  c:\users\hafsa\desktop\snap\glib-core\xmath.h(164): note: voir la référence à l'instanciation de la fonction modèle 'void TVVec<PMom,int>::Gen(const TSizeTy &,const TSizeTy &)' en cours de compilation
+          with
+          [
+              TSizeTy=int
+          ]
+  motor_pattern_extraction.cpp
+c:\users\hafsa\desktop\snap\glib-core\fl.h(396): warning C4267: 'return' : conversion de 'size_t' en 'int', perte possible de données
+c:\users\hafsa\desktop\pro\bvtest\dsm\minhash.hpp(57): warning C4244: 'initialisation' : conversion de 'std::chrono::system_clock::rep' en 'unsigned int', perte possible de données
+c:\users\hafsa\desktop\pro\bvtest\dsm\minhash.hpp(153): warning C4554: '&' : vérifiez la priorité des opérateurs comme cause possible d'erreur ; utilisez des parenthèses pour rendre plus claires les priorités
+c:\users\hafsa\desktop\pro\bvtest\dsm\minhash.hpp(162): warning C4554: '&' : vérifiez la priorité des opérateurs comme cause possible d'erreur ; utilisez des parenthèses pour rendre plus claires les priorités
+c:\users\hafsa\desktop\pro\bvtest\motor_pattern_extraction.h(51): warning C4551: liste d'arguments manquante dans l'appel de fonction
 c:\users\hafsa\desktop\snap\glib-core\ds.h(2148): warning C4244: 'argument' : conversion de 'int64' en 'const int', perte possible de données
   c:\users\hafsa\desktop\snap\glib-core\ds.h(2146): note: pendant la compilation de la fonction membre '<Inconnu>' (classe <Inconnu>)
   c:\users\hafsa\desktop\snap\glib-core\xmath.h(167): note: voir la référence à l'instanciation de la fonction modèle 'PMom &TVVec<PMom,int>::At(const TSizeTy &,const TSizeTy &)' en cours de compilation
@@ -46,8 +116,8 @@ c:\users\hafsa\desktop\snap\glib-core\ds.h(2136): warning C4244: 'argument' : c
               TSizeTy=int
           ]
   Génération de code en cours
-  2 of 5010 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  1 of 6419 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    60 functions had inline decision re-evaluated but remain unchanged
+    18 functions had inline decision re-evaluated but remain unchanged
   Fin de la génération du code
   BVTest.vcxproj -> C:\Users\hafsa\Desktop\Pro\x64\Release\BVTest.exe

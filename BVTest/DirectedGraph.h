@@ -71,6 +71,12 @@ public:
 
 	void addNodes(int node1, int node2);
 
+	TNGraph::TEdgeI BegEI() {
+		return graph->BegEI();
+	}
+	TNGraph::TEdgeI EndEI() {
+		return graph->EndEI();
+	}
 	static int getNodeID(TNGraph::TNode myNode);
 	static int getInDegree(TNGraph::TNode myNode);
 	static int getOutDegree(TNGraph::TNode myNode);
@@ -81,7 +87,9 @@ public:
 	static bool isOutNeighbor(TNGraph::TNode myNode, int nodeId);
 	static string getOutNeighbors(TNGraph::TNodeI myNode);
 	static vector<int> getOutNeighborsVector(TNGraph::TNodeI myNode);
-
+	vector<unsigned int>  getOutNeighborsVector(unsigned int n);
+	vector<unsigned int> getInNeighborsVector(unsigned int n);
+	vector<int> getInNeighborsVector(TNGraph::TNodeI myNode);
 	//return : -1 > path error ; 0 > directory exists ; 1 > directory doesn't exist
 	static int dirExists(const std::string& dirName_in)
 	{

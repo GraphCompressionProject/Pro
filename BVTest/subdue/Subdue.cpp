@@ -70,7 +70,7 @@ int Subdue::main (int argc, char **argv)
         
         
         PostProcessParameters(parameters);
-        PrintParameters(parameters);
+        //PrintParameters(parameters);
         
         if (parameters->iterations > 1)
             printf("----- Iteration 1 -----\n\n");

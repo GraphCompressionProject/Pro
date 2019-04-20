@@ -12,6 +12,9 @@
 #include "Subdue.hpp"
 #include "Params.hpp"
 #include <string>
+#include <unordered_map>
+
+
 typedef bool BOOLEAN ;
 typedef unsigned long ULONG ;
 
@@ -19,6 +22,9 @@ using namespace std;
 
 class utility{
     public :
+		
+
+
     //---------------------------------------------------------------------------
     // NAME:    MaximumNodes
     //

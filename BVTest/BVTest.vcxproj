@@ -169,6 +169,8 @@
     <ClInclude Include="compression_flags.hpp" />
     <ClInclude Include="debug_obitstream.hpp" />
     <ClInclude Include="DirectedGraph.h" />
+    <ClInclude Include="DSM\dsm.hpp" />
+    <ClInclude Include="DSM\MinHash.hpp" />
     <ClInclude Include="DynamicGraph.h" />
     <ClInclude Include="edge.hpp" />
     <ClInclude Include="empty_iterator.hpp" />
@@ -246,6 +248,8 @@
     <ClInclude Include="SuperGraph.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TextTable.h" />
+    <ClInclude Include="tree.h" />
+    <ClInclude Include="tree_util.hh" />
     <ClInclude Include="types.hpp" />
     <ClInclude Include="UndirectedGraph.h" />
     <ClInclude Include="utility_iterator_base.hpp" />
@@ -258,6 +262,8 @@
     <ClCompile Include="BVTest.cpp" />
     <ClCompile Include="compression_flags.cpp" />
     <ClCompile Include="DirectedGraph.cpp" />
+    <ClCompile Include="DSM\dsm.cpp" />
+    <ClCompile Include="DSM\MinHash.cpp" />
     <ClCompile Include="DynamicGraph.cpp" />
     <ClCompile Include="edge.cpp" />
     <ClCompile Include="fast.cpp" />

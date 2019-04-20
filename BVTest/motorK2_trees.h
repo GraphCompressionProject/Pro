@@ -46,8 +46,8 @@ public:
 		cout << "========================================================" << endl;
 		std::fixed;
 
-		cout << "T = " << tree.get_T() << endl;
-		cout << "L = " << tree.get_L() << endl;
+		//cout << "T = " << tree.get_T() << endl;
+		//cout << "L = " << tree.get_L() << endl;
 		cout << "Le ratio de Compression est de :" << (graph.getNumNodes()*graph.getNumNodes()) / (tree.get_T().size() + tree.get_L().size()) << endl;
 		//cout << "Le gain d'espace :" << (double)100 * (1 - ((tree.get_T().size() + tree.get_L().size()) / (graph.getNodes()*graph.getNodes()))) << "%" << endl;
 		cout << "Le nombre de bit par noeuds :" << (double)(tree.get_T().size() + tree.get_L().size()) / graph.getNumNodes() << endl;
@@ -97,8 +97,8 @@ public:
 		vector<listAdjacence> t = graph.getAdjList();
 		
 		k2_Trees tree(k, graph.getNodes(), t,TRUE);
-		cout << "T = " << tree.get_T() << endl;
-		cout << "L = " << tree.get_L() << endl;
+		//cout << "T = " << tree.get_T() << endl;
+		//cout << "L = " << tree.get_L() << endl;
 		cout << "========================================================" << endl;
 		std::fixed;
 
@@ -123,6 +123,7 @@ public:
 	};
 
 	void compressGraphDiffInterK2(const char* graphName, int k) {
+	
 		DynamicGraph graph(graphName);
 		cout << "========================================================" << endl;
 		Ik2_Trees tree(k, graph.getTimstemps(), graph.getNodes(), 1, graph.getMatrix());

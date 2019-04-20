@@ -4,7 +4,7 @@
 #include "DirectedGraph.h"
 #include "gcupm.h"
 #include "subdue\Subdue.hpp"
-
+#include "DSM\dsm.hpp"
 
 class motor_pattern_extraction
 {
@@ -12,14 +12,27 @@ public:
 	motor_pattern_extraction();
 	~motor_pattern_extraction();
 
-	void compressGraph(const char* graphName, string type, int patternSize, int modelType)
+	void compressGraph(const char* graphName, string type, int argc, char * argv[])
 	{
-		if (type == "GCUPM") compressGraphUPM(graphName, patternSize, modelType);
+		if (type == "GCUPM") compressGraphUPM(graphName, atoi(argv[1]), atoi(argv[2]));
+		if (type == "Subdue") {
+			
+			Subdue sbd;
+			sbd.main(argc, argv);
+
+		}
+		if (type == "DSM") compressGraph(graphName, atoi(argv[1]));
 	};
+
+	void compressGraph(const char * graphName, int numHash) {
+		DirectedGraph graph(graphName, 1);
+		dsm d(graph,numHash);
+	}
 
 	void compressGraph(int argc, char * argv[])
 	{
 		Subdue sbd;
+
 		sbd.main(argc, argv);
 	};
 

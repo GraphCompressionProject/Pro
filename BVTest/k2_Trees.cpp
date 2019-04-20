@@ -22,7 +22,6 @@ k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A, bool i
 	
 	if (n != pow(k, prof)) {
 		prof++;
-		cout << "Profondeur :" << prof << endl;
 		n1 = pow(k, prof);
 	}
 	clock_t tStart = clock();
@@ -32,11 +31,7 @@ k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A, bool i
 
 	
     BuildTree();
-	cout << "T :" << _T << endl;
-	cout << "L :" << _L << endl;
 
-	getDirect(4, 2, 0, -1);
-	getReverse(4, 2, 0, -1);
 
 
     T.clear();
@@ -90,7 +85,7 @@ k2_Trees::k2_Trees(int k, int n, DirectedGraph G)
 		prof++;
 		n1 = pow(k, prof);
 	}
-	cout << n <<"   "<<k<< endl;
+
 	clock_t tStart = clock();
 	build_from_Graph(n1, 1, 0, 0, G);
 	tExcexution = (double)(clock() - tStart) / CLOCKS_PER_SEC;
@@ -120,7 +115,6 @@ k2_Trees::k2_Trees(int k, int n, DirectedGraph G,vector<int> order)
 		prof++;
 		n1 = pow(k, prof);
 	}
-	cout << n << "   " << k << endl;
 	clock_t tStart = clock();
 	build_from_Graph(n1, 1, 0, 0, G,order);
 	tExcexution = (double)(clock() - tStart) / CLOCKS_PER_SEC;
@@ -152,7 +146,7 @@ int k2_Trees::build_from_Graph(int n, int l, int p, int q, DirectedGraph G) {
 	for (int i = 0; i<k; i++) {
 		for (int j = 0; j<k; j++) {
 			if (l == prof) { //leaf node
-				if ((i + p >= original_size) || (q + j >= original_size) || !G.edgeBetween(p + i,q + j) ) C.push_back(false);
+				if ( !G.edgeBetween(p + i,q + j) ) C.push_back(false);
 				else C.push_back(true);
 			}
 			else {
@@ -280,7 +274,6 @@ int k2_Trees::build_from_List(int n, int l, int p, int q, std::vector<listAdjace
 					else {
 						C.push_back(true);
 						A->at(p + i).advance();
-						cout << p+i  << endl;
 					}
 				}
 				else {

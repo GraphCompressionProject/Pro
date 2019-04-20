@@ -454,6 +454,51 @@ vector<int> DirectedGraph::getOutNeighborsVector(TNGraph::TNodeI myNode)
 	return Succ;
 }
 
+vector<unsigned int> DirectedGraph::getOutNeighborsVector(unsigned int n)
+{
+	vector<unsigned int> Succ;
+	bool found = false;
+	TNGraph::TNodeI myNode = graph->BegNI();
+	while (!found  && myNode < graph->EndNI() ) {
+		if (myNode.GetId() == n) found = true;
+		else myNode++;
+	}
+
+	
+	for (int i = 0; i < myNode.GetOutDeg() && found; i++) {
+		Succ.push_back(myNode.GetOutNId(i));
+	}
+	return Succ;
+}
+
+
+
+vector<unsigned int> DirectedGraph::getInNeighborsVector(unsigned int n)
+{
+	vector<unsigned int> Succ;
+	bool found = false;
+	TNGraph::TNodeI myNode = graph->BegNI();
+	while (!found  && myNode < graph->EndNI()) {
+		if (myNode.GetId() == n) found = true;
+		else myNode++;
+	}
+
+
+	for (int i = 0; i < myNode.GetInDeg() && found; i++) {
+		Succ.push_back(myNode.GetInNId(i));
+	}
+	return Succ;
+}
+
+vector<int> DirectedGraph::getInNeighborsVector(TNGraph::TNodeI myNode)
+{
+	vector<int> Succ;
+	for (int i = 0; i < myNode.GetInDeg(); i++) {
+		Succ.push_back(myNode.GetInNId(i));
+	}
+	return Succ;
+}
+
 
 
 bool DirectedGraph::isInNeighbor(TNGraph::TNode myNode, int nodeId)

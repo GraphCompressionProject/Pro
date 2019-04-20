@@ -282,6 +282,18 @@
     <ClInclude Include="subdue\VertexMap.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DSM\MinHash.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DSM\dsm.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="tree_util.hh">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -486,6 +498,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="subdue\VertexMap.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DSM\MinHash.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DSM\dsm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
