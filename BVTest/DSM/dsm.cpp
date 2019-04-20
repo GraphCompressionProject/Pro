@@ -174,7 +174,7 @@ void dsm::discoverSubs(DirectedGraph g, int numHash)
 
 		// 4.4 append the best S and C to subslist
 		append(bestS_C);
-
+		printX_B();
 	}
 
 
@@ -195,7 +195,7 @@ void dsm::append(vector<pair<vector<unsigned int>, vector<unsigned int>>> bestS_
 		std::sort(elem.second.begin(), elem.second.end());
 
 		std::set_difference(elem.first.begin(), elem.first.end(), elem.second.begin(), elem.second.end(), std::inserter(L, L.begin()));
-		std::set_intersection(elem.second.begin(), elem.second.end(), elem.first.begin(), elem.first.end(), std::inserter(R, R.begin()));
+		std::set_intersection(elem.second.begin(), elem.second.end(), elem.first.begin(), elem.first.end(), std::inserter(M, M.begin()));
 		std::set_difference(elem.second.begin(), elem.second.end(), elem.first.begin(), elem.first.end(), std::inserter(R, R.begin()));
 
 		B.push_back(true);
@@ -236,12 +236,12 @@ vector<pair<vector<unsigned int>, vector<unsigned int>>> dsm::retreiveS_C(tree<p
 			C.push_back(tmp->first);
 			tmp = T.parent(tmp);
 		}
-		//cout << "S: ";
-		//for (auto j : S) cout << j << "	";
-		//cout << endl;
-		//cout << "C: ";
-		//for (auto j : C) cout << j << "	";
-		//cout << endl << endl;
+		cout << "S: ";
+		for (auto j : S) cout << j << "	";
+		cout << endl;
+		cout << "C: ";
+		for (auto j : C) cout << j << "	";
+		cout << endl << endl;
 
 		S_C.push_back({ S,C });
 		begin++;
