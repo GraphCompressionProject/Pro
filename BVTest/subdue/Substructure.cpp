@@ -1245,7 +1245,7 @@ void Substructure::CompressFinalGraphs( Params *parameters,
     if ( numNegInstances > 0)
         compressedNegGraph = c.CompressGraph(negGraph,  negInstances,
                                            parameters);
-    
+	
     // add "SUB" and "OVERLAP" (if used) labels to label list
     if (parameters->incremental)
     {
@@ -1265,36 +1265,43 @@ void Substructure::CompressFinalGraphs( Params *parameters,
         else
             sprintf(subLabelString, "%s_%lu", SUB_LABEL_STRING, iteration);
     }
-    
+	
+
     label.setLabelType(STRING_LABEL) ;
-    label.getLabelValue().setStringLabel(subLabelString) ;
+    label.setStringLabel(subLabelString) ;
     labelList->StoreLabel(& label );
+	
     if (allowInstanceOverlap &&
         ((instances->InstancesOverlap()) ||
          (negInstances->InstancesOverlap())))
     {
+		
         if (predefinedSub)
             sprintf(overlapLabelString, "%s_%s_%lu", PREDEFINED_PREFIX,
                     OVERLAP_LABEL_STRING, iteration);
         else
             sprintf(overlapLabelString, "%s_%lu", OVERLAP_LABEL_STRING,
                     iteration);
+	
         label.getLabelValue().setStringLabel(overlapLabelString) ;
+		
         labelList->StoreLabel(&label);
     }
     
-    // reset graphs with compressed graphs
+
+	// reset graphs with compressed graphs
     if ( numInstances > 0)
     {
-        parameters->posGraph->FreeGraph();
+        //parameters->posGraph->FreeGraph();
         parameters->posGraph = compressedPosGraph;
     }
     if ( numNegInstances > 0)
     {
-        parameters->negGraph->FreeGraph();
+       // parameters->negGraph->FreeGraph();
         parameters->negGraph = compressedNegGraph;
     }
     
+	
     // Recompute label list and MDL for positive and negative graphs.
     // This should not be done for compression using a predefined sub,
     // because compressing the label list may remove a label that a

@@ -20,10 +20,10 @@ Ik2_Trees::Ik2_Trees(int k,int nbT, int n,bool diff, vector<vector<boost::dynami
 		clock_t tStart = clock();
         B= CalcDiff(A);
         // Building the Ik2Tree
-		cout<< "lllll";
+		//cout<< "lllll";
 		build_from_matrix(n, 1, 0, 0, B);
 		tExec = (double)(clock() - tStart) / CLOCKS_PER_SEC;
-		cout << tExec << endl;
+		//cout << tExec << endl;
     }
 	
      BuildTree();

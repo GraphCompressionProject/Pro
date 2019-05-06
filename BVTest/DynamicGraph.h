@@ -6,13 +6,20 @@
 #include <sstream>
 #include <vector>
 #include <boost/dynamic_bitset.hpp>
+#include "DirectedGraph.h"
+
+
+
+#include <iostream> 
+#include <iterator> 
+#include <map> 
 
 using namespace std;
 
 class DynamicGraph
 {
 public:
-	PNGraph graph;
+	map<unsigned int, DirectedGraph> graph;
 	string fileName;
 	vector<vector<boost::dynamic_bitset<>>> matrice;
 	int edges;
@@ -22,8 +29,26 @@ public:
 
 
 public:
+	DynamicGraph() {
+
+	};
 	DynamicGraph(const char* fileName);
-	DynamicGraph(PNGraph& G);
+	
+	void init(string filename);
+
+	DynamicGraph(string filename);
+
+	void printGraph();
+
+	DirectedGraph getGraphAt(unsigned int timestemp) {
+		return graph[timestemp];
+	}
+
+	string getFileName();
+
+	map<unsigned int, DirectedGraph> getGraph() {
+		return graph;
+	}
 
 	int getTimstemps();
 	int getNodes();
@@ -32,8 +57,8 @@ public:
 	~DynamicGraph();
 
 	void creatMatrice() {
-		cout << nodes << endl;
-		cout << Timstemps << endl;
+		//cout << nodes << endl;
+		//cout << Timstemps << endl;
 		for (int j = 0; j < Timstemps; j++)
 		{
 			vector<boost::dynamic_bitset<>> vect;
@@ -44,8 +69,7 @@ public:
 			}
 			matrice.push_back(vect);
 		}
-		cout << "matrice created " << endl;
-		
+		//cout << "matrice created " << endl;
 	}
 };
 

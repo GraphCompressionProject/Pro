@@ -35,6 +35,7 @@ available.
 #include <algorithm>
 #include <cstddef>
 
+using namespace std;
 
 /// A node in the tree, combining links to other nodes as well as the actual data.
 template<class T>
@@ -2048,7 +2049,7 @@ int tree<T, tree_node_allocator>::max_depth() const
 {
 	int maxd = -1;
 	for (tree_node *it = head->next_sibling; it != feet; it = it->next_sibling)
-		maxd = std::max(maxd, max_depth(it));
+		maxd = max(maxd, max_depth(it));
 
 	return maxd;
 }
@@ -2078,7 +2079,7 @@ int tree<T, tree_node_allocator>::max_depth(const iterator_base& pos) const
 		}
 		tmp = tmp->first_child;
 		++curdepth;
-		maxdepth = std::max(curdepth, maxdepth);
+		maxdepth = max(curdepth, maxdepth);
 	}
 }
 

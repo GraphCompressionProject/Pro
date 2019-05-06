@@ -28,6 +28,9 @@ public:
 	
 	
 public:
+	DirectedGraph() {
+
+	};
 	DirectedGraph(const char* fileName);
 	DirectedGraph(string fileName);
 	DirectedGraph(bool empty, int n, int m, string fileName);
@@ -49,6 +52,9 @@ public:
 	TNGraph::TEdgeI getEdgeIteratorEnd();
 
 	bool edgeBetween(int node1, int node2);
+	void addedge2(int src, int dst) {
+		graph->AddEdge2(src, dst);
+	}
 	bool emptyGraph();
 	void sortAdjencyLists();
 	void saveGraph();
@@ -67,6 +73,10 @@ public:
 			boost::dynamic_bitset<> c{ n,0 };
 			matrice.push_back(c);
 		}
+	}
+
+	string getFilename() {
+		return fileName;
 	}
 
 	void addNodes(int node1, int node2);

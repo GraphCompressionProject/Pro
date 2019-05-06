@@ -23,7 +23,7 @@
     <ProjectGuid>{A648DC88-446B-46DD-B9D1-41F0915AACA0}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>BVTest</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -167,6 +167,8 @@
     <ClInclude Include="collection_wrappers.hpp" />
     <ClInclude Include="CompressAgregation.h" />
     <ClInclude Include="compression_flags.hpp" />
+    <ClInclude Include="DDSM\DDSM.h" />
+    <ClInclude Include="DDSM\temporalMinHash.h" />
     <ClInclude Include="debug_obitstream.hpp" />
     <ClInclude Include="DirectedGraph.h" />
     <ClInclude Include="DSM\dsm.hpp" />
@@ -261,6 +263,8 @@
     <ClCompile Include="..\..\Snap\snap-core\Snap.cpp" />
     <ClCompile Include="BVTest.cpp" />
     <ClCompile Include="compression_flags.cpp" />
+    <ClCompile Include="DDSM\DDSM.cpp" />
+    <ClCompile Include="DDSM\temporalMinHash.cpp" />
     <ClCompile Include="DirectedGraph.cpp" />
     <ClCompile Include="DSM\dsm.cpp" />
     <ClCompile Include="DSM\MinHash.cpp" />

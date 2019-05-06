@@ -1,0 +1,130 @@
+/* Move frame*/
+@keyframes moveRound {
+    0%   {background-color:#eee3ff; left:-24px; top:0px;}
+    25%  {background-color:#feddfc; left:100px; top:0px;}
+    50%  {background-color:#efe4ff; left:100px; top:100px;}
+    75%  {background-color:#e2fcf4; left:-24px; top:200px;}
+    100% {background-color:#eee3ff; left:-24px; top:0px;}
+}
+@-webkit-keyframes moveRound {
+    0%   {background-color:#eee3ff; left:-24px; top:0px;}
+    25%  {background-color:#feddfc; left:100px; top:0px;}
+    50%  {background-color:#efe4ff; left:100px; top:200px;}
+    75%  {background-color:#e2fcf4; left:-24px; top:100px;}
+    100% {background-color:#eee3ff; left: -24px; top:0px;}
+} 
+@keyframes moveShap {
+    0%   {left: 0px; top:0px;}
+    25%  {left:100px; top:0px;}
+    50%  {left:100px; top:100px;}
+    75%  {left: 0px; top:200px;}
+    100% {left: 0px; top:0px;}
+}
+@keyframes moveShap2 {
+    0%   {right: 230px; top: 85px;}
+    25%  {right:100px; top: 85px;}
+    50%  {right:100px; top:100px;}
+    75%  {right: 230px; top:200px;}
+    100% {right: 220px; top: 100px;}
+}
+/* Move frame*/
+
+/* Heartbeat frame*/
+@-webkit-keyframes heartbeat {
+    to {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+
+@keyframes heartbeat {
+    to {
+        -webkit-transform: scale(1.2);
+        transform: scale(1.2);
+    }
+}
+/* Rotation frame*/
+@keyframes rotation{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Bottom to Top key frame*/
+@-webkit-keyframes BottomToTop {
+    49% {
+        -webkit-transform : translateY(-100%);
+        }
+    50% {
+        opacity           : 0;
+        -webkit-transform : translateY(100%);
+        }
+    51% {
+        opacity : 1;
+        }
+    }
+@-moz-keyframes BottomToTop {
+    49% {
+        -moz-transform : translateY(-100%);
+        }
+    50% {
+        opacity        : 0;
+        -moz-transform : translateY(100%);
+        }
+    51% {
+        opacity : 1;
+        }
+    }
+@keyframes BottomToTop {
+    49% {
+        transform : translateY(-100%);
+    }
+    50% {
+        opacity   : 0;
+        transform : translateY(100%);
+    }
+    51% {
+        opacity : 1;
+    }
+}
+/* DoublePulse */
+@-webkit-keyframes doublePulse {
+    0% {
+        -webkit-transform: scale(.6);
+        transform: scale(.6);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0
+    }
+}
+
+@keyframes doublePulse {
+    0% {
+        -webkit-transform: scale(.6);
+        transform: scale(.6);
+        opacity: 1
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0
+    }
+}

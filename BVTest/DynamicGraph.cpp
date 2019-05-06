@@ -2,13 +2,34 @@
 #include "DynamicGraph.h"
 
 
-DynamicGraph::DynamicGraph(PNGraph& G)
-{
-}
+
 
 
 DynamicGraph::~DynamicGraph()
 {
+}
+
+string DynamicGraph::getFileName() {
+	return fileName;
+}
+
+
+DynamicGraph::DynamicGraph(string fileName)
+{
+	init(fileName);
+}
+
+void DynamicGraph::printGraph()
+{
+	for (auto it = graph.begin(); it != graph.end(); it++) {
+		cout << "TimeStemps " << it->first << " : " << endl;
+		DirectedGraph Graph = it->second;
+		// traverse the edges
+		for (TNGraph::TEdgeI EI = Graph.BegEI(); EI < Graph.EndEI(); EI++) {
+			printf("edge (%d, %d)\n", EI.GetSrcNId(), EI.GetDstNId());
+		}
+		cout << "=======================================================" << endl;
+	}
 }
 
 
@@ -31,7 +52,7 @@ DynamicGraph::DynamicGraph(const char* fileName)
 	//graphe non vide
 	assert(nodes > 0);
 	//double partie = length / 10.0 ; 
-	cout << "file length " << (int)length << " bytes" << endl;
+	//cout << "file length " << (int)length << " bytes" << endl;
 	//recuperer le nb des timestemps
 	getline(myfile, nextline);
 	istringstream nt(nextline);
@@ -44,18 +65,18 @@ DynamicGraph::DynamicGraph(const char* fileName)
 	double pourcen_cum = 0;
 	int i = 0;
 
-	cout << "file length " << (int)length << " bytes" << endl;
+	//cout << "file length " << (int)length << " bytes" << endl;
 
 	std::istringstream iss;
 	std::vector<int> results;
-	long T=0;
-	int iT=0;
-	
+	long T = 0;
+	int iT = 0;
+
 
 
 	if (myfile.is_open())
 	{
-		std::cout << "File Loading ... " << std::endl;
+		//std::cout << "File Loading ... " << std::endl;
 
 		while (getline(myfile, line))
 		{
@@ -64,7 +85,7 @@ DynamicGraph::DynamicGraph(const char* fileName)
 			if (pourcen_cum >= 10.0)
 			{
 
-				cout << " --- " << pourcentage << "%";
+				//cout << " --- " << pourcentage << "%";
 				pourcentage += 10;
 				pourcen_cum -= 10;
 				i++;
@@ -85,10 +106,10 @@ DynamicGraph::DynamicGraph(const char* fileName)
 				{
 					T = results.at(2);
 					iT++;
-					
+
 					idT.push_back(T);
 				}
-				
+
 
 				matrice[iT][results.at(0)][results.at(1)] = true;
 
@@ -97,15 +118,83 @@ DynamicGraph::DynamicGraph(const char* fileName)
 
 		while (i != 10)
 		{
-			cout << " --- " << pourcentage << "%";
+			//cout << " --- " << pourcentage << "%";
 			pourcentage += 10;
 			i++;
 		}
 		cout << endl;
 
 		myfile.close();
-		std::cout << "File Loaded. " << std::endl;
+		//std::cout << "File Loaded. " << std::endl;
 
+
+	}
+	else
+	{
+		cerr << "File not opened" << endl;
+	}
+}
+
+void DynamicGraph::init(string filename)
+{
+	this->fileName = filename.c_str();
+	string line;
+	fstream myfile;
+	myfile.open(("..\\..\\BVTest\\data\\" + this->fileName + ".txt").c_str(), ios::in);
+
+	
+	//récupérer le nombre de noeuds 
+	string nextline;
+
+	cout << "I am here" << endl;
+	//getline(myfile, nextline);
+	//istringstream nt(nextline);
+
+
+
+	//double cumul = 0.0; 
+	int pourcentage = 10;
+	double pourcentage2;
+	double pourcen_cum = 0;
+	int i = 0;
+
+
+	std::istringstream iss;
+	std::vector<int> results;
+	long T = 0;
+	int iT = 0;
+
+
+
+	if (myfile.is_open())
+	{
+		while (getline(myfile, line))
+		{
+			if (line[0] != '#')
+			{
+				iss.clear();
+				iss.str(line);
+				results.clear();
+				for (int n = 0; n < 3; n++)
+				{
+					int val;
+					iss >> val;
+					results.push_back(val);
+				}
+
+				if (graph.find(results[2]) != graph.end()) {
+					//le Graph du timeStemp exist 
+					graph[results[2]].addedge2(results[0], results[1]);
+				}
+				else {
+					//creer une nouvelle entree pour ce graphe
+					PNGraph G = TNGraph::New();
+					G->AddEdge2(results[0], results[1]);
+					DirectedGraph gra(G);
+					graph.insert({ results[2], gra });
+				}
+			}
+		}
 
 	}
 	else

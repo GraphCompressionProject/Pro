@@ -5,7 +5,10 @@
 #include <boost/dynamic_bitset.hpp>
 #include <ctgmath>
 #include <iostream>
+#include <fstream>
 #include "helpfunctions.h"
+
+using namespace std;
 
 using std::vector;
 
@@ -42,6 +45,16 @@ public:
 
 	void Direct(int n, int  p, int  q, int   x);
 	void Reverse(int n, int  p, int  q, int  x);
+
+	void saveT_L(string filename) {
+		ofstream outFile;
+		string folder1 = "..\\..\\BVTest\\data\\";
+		outFile.open(folder1 + "IK2_out_" + filename + ".txt", 'w');
+		for (int i = 0; i < _T.size(); i++) outFile << _T[i];
+		outFile << endl << endl;
+		for (int i = 0; i < _L.size(); i++) outFile << _L[i];
+		outFile.close();
+	}
 
 };
 

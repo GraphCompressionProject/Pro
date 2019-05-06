@@ -1,0 +1,81 @@
+/* Our_works_area */
+.our_works_area{
+    display: block;
+    overflow: hidden;
+    padding: 0 200px 30px;
+    .work_img{
+        max-width: 897px;
+        position: relative;
+        padding-bottom: 245px;
+        img{
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .work_home_img{
+            position: relative;
+            display: block;
+            overflow: hidden;
+            max-width: 761px;
+            border-radius: 10px;
+            &:after{
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                display: block; 
+                background-image: -moz-linear-gradient( -5deg, rgb(132,50,255) 0%, rgb(255,255,255) 100%);
+                background-image: -webkit-linear-gradient( -5deg, rgb(132,50,255) 0%, rgb(255,255,255) 100%);
+                background-image: -ms-linear-gradient( -5deg, rgb(132,50,255) 0%, rgb(255,255,255) 100%);
+                opacity: 0.831;
+            }
+        }
+        .work_img_2{
+            position: absolute;
+            right: 0;
+            top: 165px;
+            box-shadow: 0px 17px 45px 0px rgba(91, 91, 91, 0.35);
+        }
+    }
+    .work_contant{
+        padding-left: 80px;
+        h4{
+            font: 400 21px/1 $nira;
+            color: #382c4d;
+        }
+        h2{
+            font: 700 42px/55.56px $nira;
+            color: #382c4d;
+            padding: 40px 0 30px;
+        }
+        p{
+            font-size: 18px;
+            max-width: 530px;
+            line-height: 31.5px;
+        }
+    }
+    .work_slide{ 
+        .carousel-indicators{  
+            margin: 0;
+            padding: 50px 0; 
+            display: block;
+            position: relative;
+            bottom: 0;
+            li{
+                width: 45px;
+                height: 10px;
+                background: #f2ecfa; 
+                text-indent: -999px;
+                display: inline-block;
+                cursor: pointer;
+                @include transition;
+                &:hover, &:focus, &.active{
+                    background: $bc;
+                    width: 95px;
+                }
+            }
+        }
+    }
+}
+/* Our_works_area */ 

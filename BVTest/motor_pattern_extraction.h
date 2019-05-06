@@ -27,6 +27,10 @@ public:
 	void compressGraph(const char * graphName, int numHash) {
 		DirectedGraph graph(graphName, 1);
 		dsm d(graph,numHash);
+
+		cout << (graph.getNumNodes()*graph.getNumNodes()) / ( d.getX_B().first.size() + d.getX_B().second.size() ) << endl;
+		cout << (double)(d.getX_B().first.size() + d.getX_B().second.size()) / graph.getNumNodes() << endl;
+		cout << (double)d.get_Time() << endl;
 	}
 
 	void compressGraph(int argc, char * argv[])
@@ -42,17 +46,22 @@ public:
 	
 		gcupm compressor(graph.getMatrix(), patternSize, modelType);
 
+		compressor.saveMat(graphName);
 		/*std::vector<boost::dynamic_bitset<> > Comp = compressor.get_Result();
 		for (boost::dynamic_bitset<>::size_type i = 0; i < Comp.size(); i++) {
 				cout << Comp[i] << endl;
 		}*/
 
-		cout <<endl<< "========================================================" << endl;
+		//cout <<endl<< "========================================================" << endl;
 		std::fixed;
 
-		cout << "Le ratio de Compression est de :" << (graph.getNodes()*graph.getNodes()) / compressor.get_size() << endl;
-		cout << "Le nombre de bit par noeuds :" << (double)(compressor.get_size()) / graph.getNodes() << endl;
-		cout << "Le temps de Compression est de :" << (double)compressor.get_Time() << endl << endl;
+		//cout << "Le ratio de Compression est de :" << (graph.getNodes()*graph.getNodes()) / compressor.get_size() << endl;
+		//cout << "Le nombre de bit par noeuds :" << (double)(compressor.get_size()) / graph.getNodes() << endl;
+		//cout << "Le temps de Compression est de :" << (double)compressor.get_Time() << endl << endl;
+
+		cout  << (graph.getNodes()*graph.getNodes()) / compressor.get_size() << endl;
+		cout << (double)(compressor.get_size()) / graph.getNodes() << endl;
+		cout  << (double)compressor.get_Time() << endl ;
 	};
 };
 

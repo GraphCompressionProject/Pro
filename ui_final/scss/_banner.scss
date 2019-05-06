@@ -1,0 +1,224 @@
+/* Banner_area */
+.banner_area{
+    background: url(../images/bannar-shap-3.png) no-repeat top right; 
+    display: block;
+    overflow: hidden; 
+    position: relative;
+    z-index: 1; 
+    padding: 350px 0 0;
+    h2{
+        font: 600 62px/75px $nira;
+        color: $heding; 
+        max-width: 800px;
+    }
+    p{
+        font: 400 21px/36px $nira; 
+        max-width: 650px;
+        padding-top: 85px;
+        padding-bottom: 115px;
+    }
+    .theme_btn{
+        min-width: 200px;
+    }
+    .video_btn{  
+        color: $heding;     
+        background: #fff;      
+        i{
+            color: #e7e3f4;
+            font-size: 25px;
+            padding-left: 10px;
+            position: relative;
+            top: 1px;
+        }
+        &:hover, &:focus{
+            background: $bc;
+            color: #fff;
+        }
+    }
+    .bannar_img{
+        position: absolute;
+        right: 0;
+        top: 260px;
+        z-index: -1;
+    }
+    .video_area{
+        position: relative;
+        bottom: 20px;
+        float: right;
+        margin-right: 120px;
+        animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate;
+        i{
+            color: #fff;
+            font-size: 25px;
+            position: absolute;
+            top:55px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            display: block;
+        }
+    }
+    .layer_1{
+        position: absolute !important;
+        top: 380px !important;
+        left: 0 !important;
+        z-index: -1;
+    }
+    .layer_2{
+        position: absolute !important;
+        top: 180px !important;
+        left: 370px !important;
+        z-index: -1;
+    }
+}  
+.ba_2{
+    padding-bottom: 80px;
+}
+/* End Banner Aea */
+
+/* pages_banner */
+.pages_banner{
+    display: block;
+    overflow: hidden; 
+    padding: 395px 0 240px;
+    box-shadow: 0px 48px 62px 0px rgba(236, 234, 234, 0.35);
+    background: #fff;
+    z-index: 1; 
+    position: relative; 
+    .bannar_img{
+        position: absolute;
+        right: 0;
+        top: 203px; 
+        max-width: 100%;
+        z-index: -1; 
+    }
+    h2{
+        font: 600 62px/75px $nira;
+        color: $heding; 
+        max-width: 640px;
+    }
+    p{
+        font: 400 21px/36px $nira; 
+        max-width: 650px;
+        padding-top: 25px; 
+    }
+    
+    .layer_1{
+        position: absolute !important;
+        top: auto!important;
+        left: 0 !important;
+        bottom: 0;
+        z-index: -1;
+    }
+    .layer_2{
+        position: absolute !important;
+        top: 180px !important;
+        left: 370px !important;
+        z-index: -1;
+    }
+    .layer_3{
+        position: absolute;
+        bottom: 0;
+        margin-left: 100px; 
+        animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate;
+    }
+}  
+.pb_2{
+    box-shadow: none;
+}
+/* coming_soon */
+.coming_soon{
+    display: block;
+    overflow: hidden;
+    padding-bottom: 100px; 
+    .countdown {
+        background: url("../images/coundown-bg.png") no-repeat right;
+        padding-right: 60px;
+        display: inline-block;
+        .ds-element{
+            display: inline-block;
+            box-shadow: 0px 12px 23px 0px rgba(196, 194, 194, 0.35);
+            width: 158px;
+            border-radius: 10px;
+            background: #fff;
+            text-align: center;
+            margin-right: 25px;
+            margin-bottom: 20px;
+            padding: 35px 0 25px;
+            .ds-element-title{
+                font: 400 21px/1 $nira;
+                color: #382c4d;
+            }
+            .ds-element-value{
+                font: 700 50px/1 $nira;
+                color: $bc;
+                padding-top: 27px;
+            }
+        }
+    }
+    .input-group{
+        max-width: 910px;
+        margin-top: 95px;
+        .form-control{
+            box-shadow: 0px 22px 32px 0px rgba(201, 201, 201, 0.35);
+            border: 0;
+            border-radius: 0;
+            font: 400 18px/80px $nira;
+            color: rgba(40, 35, 49, 0.502);
+            height: auto;
+            outline: none;
+            padding: 0 30px; 
+            @include placeholder{
+                color: rgba(40, 35, 49, 0.502);
+                @include transition;
+            }
+            &:focus{ 
+                @include placeholder{
+                    color: transparent;
+                }
+            }
+        }
+        .input-group-text{
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+            font: 700 18px/80px $nira;
+            color: #fff;
+            background: $bc;
+            min-width: 175px;
+            padding: 0;
+            border-radius: 0;
+            border: 0;
+            margin-left: 40px;
+            @include transition;
+            &:hover, &:focus{
+                box-shadow: 0px 30px 36px 0px rgba(158, 109, 248, 0.35);
+            }
+        }
+    }
+    
+    .footer_social{
+        padding-top: 130px;
+        li{
+            display: inline-block; 
+            padding-right: 17px;  
+            a{
+                width: 51px;
+                line-height: 51px;
+                display: inline-block;
+                color: #bc90ff;
+                font-size: 18px;
+                text-align: center;
+                border-radius: 50%;
+                background: #fff; 
+                box-shadow: 0px 20px 75px 0px rgba(183, 150, 233, 0.35);
+                &:hover, &:focus{
+                    background: $bc;
+                    color: #fff;
+                }
+            }
+        }
+    }
+}  
+
+

@@ -11,5 +11,8 @@ Les commandes sont :
 		- DSM : BVTest 4 graph DSM number_Of_Hash_Function
 		- CanDenSe :
 
+Notre methode :
+		- BVTest 7 graph DDSM number_Of_Hash_Function
+
 
 Pour les testes le graph "web-polblogs" donne un bon resultat.

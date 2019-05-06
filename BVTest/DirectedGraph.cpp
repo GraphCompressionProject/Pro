@@ -36,10 +36,10 @@ DirectedGraph::DirectedGraph(bool empty, int n, int m, string fileName)
 DirectedGraph::DirectedGraph(const char* fileName, int load)
 {
 	this->fileName =  fileName;
-	cout << "reading the graph" << endl;
+	//cout << "reading the graph" << endl;
 	if (load == 1)
 	{
-		cout << "reading the graph" << endl;
+		//cout << "reading the graph" << endl;
 
 		graph = TNGraph::New();
 
@@ -60,19 +60,19 @@ DirectedGraph::DirectedGraph(const char* fileName, int load)
 		double pourcen_cum=0; 
 		int i = 0;
 
-		cout << "file length " << (int) length << " bytes" << endl;
+		//cout << "file length " << (int) length << " bytes" << endl;
 
 		std::istringstream iss;
 		std::vector<int> results;
 		if (myfile.is_open())
 		{  
-			std::cout << "File Loading ... " << std::endl;
+			//std::cout << "File Loading ... " << std::endl;
 			while (getline(myfile, line))
 			{
 				pourcen_cum += (((double)line.size()) / length)*100;
 				if (pourcen_cum >= 10.0)
 				{
-					cout << " --- " << pourcentage << "%";
+					//cout << " --- " << pourcentage << "%";
 					pourcentage += 10;
 					pourcen_cum -= 10;
 					i++;
@@ -96,7 +96,7 @@ DirectedGraph::DirectedGraph(const char* fileName, int load)
 
 			while (i !=10)
 			{
-				cout << " --- " << pourcentage << "%";
+				//cout << " --- " << pourcentage << "%";
 				pourcentage += 10;
 				i++;
 			}
@@ -104,7 +104,7 @@ DirectedGraph::DirectedGraph(const char* fileName, int load)
 
 
 			myfile.close();
-			std::cout << "File Loaded. " << std::endl;
+			//std::cout << "File Loaded. " << std::endl;
 
 
 		}
@@ -145,11 +145,11 @@ DirectedGraph::DirectedGraph(const char* fileName)
 		istringstream nl(nextline);
 		nl >> nodes;
 
-		cout << nodes << endl;
+		//cout << nodes << endl;
 		//graphe non vide
 		assert(nodes > 0);
 		//double partie = length / 10.0 ; 
-		cout << "file length " << (int)length << " bytes" << endl;
+		//cout << "file length " << (int)length << " bytes" << endl;
 
 		creatMatrice(nodes);
 		//double cumul = 0.0; 
@@ -158,13 +158,13 @@ DirectedGraph::DirectedGraph(const char* fileName)
 		double pourcen_cum = 0;
 		int i = 0;
 
-		cout << "file length " << (int)length << " bytes" << endl;
+		//cout << "file length " << (int)length << " bytes" << endl;
 
 		std::istringstream iss;
 		std::vector<int> results;
 		if (myfile.is_open())
 		{
-			std::cout << "File Loading ... " << std::endl;
+			//std::cout << "File Loading ... " << std::endl;
 			
 			while (getline(myfile, line))
 			{
@@ -175,7 +175,7 @@ DirectedGraph::DirectedGraph(const char* fileName)
 				if (pourcen_cum >= 10.0)
 				{
 
-					cout << " --- " << pourcentage << "%";
+					//cout << " --- " << pourcentage << "%";
 					pourcentage += 10;
 					pourcen_cum -= 10;
 					i++;
@@ -199,7 +199,7 @@ DirectedGraph::DirectedGraph(const char* fileName)
 
 			while (i != 10)
 			{
-				cout << " --- " << pourcentage << "%";
+				//cout << " --- " << pourcentage << "%";
 				pourcentage += 10;
 				i++;
 			}
@@ -207,7 +207,7 @@ DirectedGraph::DirectedGraph(const char* fileName)
 
 
 			myfile.close();
-			std::cout << "File Loaded. " << std::endl;
+			//std::cout << "File Loaded. " << std::endl;
 
 
 		}
@@ -235,11 +235,11 @@ DirectedGraph::DirectedGraph(string fileName)
 	istringstream nl(nextline);
 	nl >> nodes;
 
-	cout << nodes << endl;
+	//cout << nodes << endl;
 	//graphe non vide
 	assert(nodes > 0);
 	//double partie = length / 10.0 ; 
-	cout << "file length " << (int)length << " bytes" << endl;
+	//cout << "file length " << (int)length << " bytes" << endl;
 
 	//double cumul = 0.0; 
 	int pourcentage = 10;
@@ -247,13 +247,13 @@ DirectedGraph::DirectedGraph(string fileName)
 	double pourcen_cum = 0;
 	int i = 0;
 
-	cout << "file length " << (int)length << " bytes" << endl;
+	//cout << "file length " << (int)length << " bytes" << endl;
 
 	std::istringstream iss;
 	std::vector<int> results;
 	if (myfile.is_open())
 	{
-		std::cout << "File Loading ... " << std::endl;
+		//std::cout << "File Loading ... " << std::endl;
 
 		while (getline(myfile, line))
 		{
@@ -262,7 +262,7 @@ DirectedGraph::DirectedGraph(string fileName)
 			if (pourcen_cum >= 10.0)
 			{
 
-				cout << " --- " << pourcentage << "%";
+				//cout << " --- " << pourcentage << "%";
 				pourcentage += 10;
 				pourcen_cum -= 10;
 				i++;
@@ -294,7 +294,7 @@ DirectedGraph::DirectedGraph(string fileName)
 
 		while (i != 10)
 		{
-			cout << " --- " << pourcentage << "%";
+			//cout << " --- " << pourcentage << "%";
 			pourcentage += 10;
 			i++;
 		}
@@ -302,7 +302,7 @@ DirectedGraph::DirectedGraph(string fileName)
 
 
 		myfile.close();
-		std::cout << "File Loaded. " << std::endl;
+		//std::cout << "File Loaded. " << std::endl;
 
 
 	}

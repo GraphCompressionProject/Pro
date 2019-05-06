@@ -1,0 +1,177 @@
+/* Pricing_plan_area */
+.pricing_plan_area{
+    display: block;
+    overflow: hidden; 
+    padding: 200px 0 115px;
+    background: url(../images/fantasy-bg.png) no-repeat top right;
+    @media(min-width: 1260px){
+        .container{
+            max-width: 1240px;
+        }
+    }
+    h2{
+        font: 400 52px/62px $nira;
+        color: $heding; 
+        max-width: 760px;
+    }
+    .tittle{
+        display: block;
+        overflow: hidden;
+    }
+    .tab_list{
+        float: right;
+        margin-top: -70px;
+        li{
+            a{
+                font: 700 18px/50px $nira;
+                min-width: 122px;
+                text-align: center;
+                border: 1px solid #f2e3ff;
+                color: $bc;
+                padding: 0;
+                &:hover, &:focus, &.active{
+                    background: $bc;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .pricing_row{
+        padding-top: 70px;
+    }
+    .fantasy{
+        box-shadow: 0px 0px 19px 0px rgba(215, 215, 215, 0.35);
+        border-radius: 10px;
+        margin-bottom: 30px;
+        padding: 30px 35px 105px 65px;
+        background: url("../images/fantasy-1.png") no-repeat bottom right;
+        position: relative;
+        .amount{ 
+            font: 400 28px/60px $nira; 
+            color: #fff;
+            background: $bc;
+            text-align: center;
+            display: inline-block;
+            min-width: 113px;
+            padding: 0 20px;
+            box-shadow: 0px 27px 18px 0px rgba(164, 109, 253, 0.35);
+            border-radius: 10px;
+            position: relative;
+            &:after{
+                content: "";
+                position: absolute;
+                box-shadow: 0px 18px 27px 0px rgba(203, 203, 203, 0.35);
+                background: #eaddff;
+                border-radius: 50%;
+                height: 60px;
+                width: 60px;
+                z-index: -1;
+                left: -24px;
+                bottom: -20px; 
+                -webkit-animation: moveRound 20s linear 2s infinite alternate;
+                animation: moveRound 20s linear 2s infinite alternate;
+            }
+        } 
+        .heding{
+            display: block;
+            font: 700 25px/1 $nira;
+            color: $heding;
+            padding-top: 60px;
+            &:hover, &:focus{
+                color: $hover;
+            }
+        }
+        p{
+            color: rgba(40, 35, 49, 0.8);
+            font-size: 18px;
+            padding: 25px 0;
+        }
+        ul{
+            padding-top: 8px;
+            li{
+                font: 400 18px/35px $nira; 
+                color: #282331;
+                padding-left: 35px;
+                position: relative; 
+                &:before{
+                    content: "\f055";
+                    position: absolute;
+                    left: 0;
+                    top: 0; 
+                    font: normal normal normal 18px/35px FontAwesome;
+                    color: rgba(143, 73, 249, 0.8);
+                }
+
+            }
+        }
+        .check_btn{
+            font-size: 20px;
+            line-height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            color: $bc;
+            background: #fff;
+            text-align: center;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            &:hover, &:focus{
+                background: $bc;
+                color: #fff;
+            }
+        }
+        &.fantasy_2{
+            background: url("../images/fantasy-big-4.png") no-repeat bottom right;
+            .amount{
+                background: #acfbde; 
+                box-shadow: 0px 27px 18px 0px rgba(212, 250, 236, 0.35);
+            }
+        } 
+        &.fantasy_3{
+            background: url("../images/fantasy-2.png") no-repeat bottom right;
+            padding-bottom: 70px;
+            .amount{
+                background: #fed0fd; 
+                box-shadow: 0px 27px 18px 0px rgba(250, 197, 249, 0.35);
+            }
+        } 
+    }
+}
+/* End Pricing_plan_area */
+
+/* Included_plans */
+.included_plans{
+    display: block;
+    overflow: hidden;
+    padding-bottom: 140px;
+    h2{
+        font: 400 32px/1 $nira;
+        color: $heding;
+        text-align: center;
+        padding-bottom: 90px;
+    }
+    .included_list{
+        li{
+            padding-left: 50px;
+            font: 400 21px/31px $nira;
+            color: $heding;
+            position: relative;
+            padding-bottom: 60px;
+            &:before{
+                content: "\f104";
+                position: absolute;
+                left: 0;
+                top: 0;
+                line-height: 31px;
+                font-family: Flaticon;
+                color: $bc;
+                font-size: 22px;
+            }
+        }
+    }
+    .il_2{
+        padding-left: 50px;
+    }
+}
+/* End included_plans */
+ 

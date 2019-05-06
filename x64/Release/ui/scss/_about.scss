@@ -1,0 +1,163 @@
+/* About_agency_area */
+.about_agency_area{
+    display: block;
+    overflow: hidden;
+    padding: 220px 0 100px;
+    position: relative;
+    &:before{
+        content: "";
+        position: absolute;
+        left: -20px;
+        top: 360px;
+        height: 79px;
+        width: 79px;
+        border-radius: 50%;
+        background: #f2f3ff;   
+        animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate;
+        z-index: -1;
+    }
+    &:after{
+        content: "";
+        position: absolute;
+        left: 70px;
+        top: 290px;
+        height: 79px;
+        width: 79px;
+        border-radius: 50%;
+        background: #f2eaff; 
+        animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate; 
+        z-index: -1;
+    }
+    .round_shap{ 
+        position: absolute;
+        left: 175px;
+        top: 260px;
+        height: 25px;
+        width: 25px;
+        border-radius: 50%;
+        background: #d1b7ff;  
+        animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate;
+        z-index: -1;
+    }
+    @media(min-width:1560px){
+        .container{
+            margin-right: 200px;
+            max-width: 1345px;
+        }
+    } 
+    .agency_contant{ 
+        .icons{
+            width: 65px;
+            line-height: 65px;
+            font-size: 26px;
+            color: $bc;
+            background: #fff;
+            text-align: center;
+            display: block;
+            box-shadow: 0px 27px 18px 0px rgba(164, 109, 253, 0.35);
+            border-radius: 10px;
+            position: relative;
+            &:after{
+                content: "";
+                position: absolute;
+                box-shadow: 0px 18px 27px 0px rgba(203, 203, 203, 0.35);
+                background: #f1e9ff;
+                border-radius: 50%;
+                height: 78px;
+                width: 78px;
+                z-index: -1;
+                left: -20px;
+                top: -10px; 
+                -webkit-animation: moveRound 20s linear 2s infinite alternate;
+                animation: moveRound 20s linear 2s infinite alternate;
+            }
+        } 
+        h4{
+            font: 500 21px/31px $nira;
+            color: #382c4d;
+            padding-top: 35px;
+        }
+        h2{
+            font: 700 42px/55px $nira;
+            color: #382c4d;
+            max-width: 500px;
+            padding-top: 40px;
+        }
+        p{
+            font: 400 18px/31px $nira;
+            color: rgba(56, 44, 77, 0.902); 
+            max-width: 570px;
+            padding: 30px 0 70px;
+        }
+        .theme_btn{
+            line-height: 50px;
+            min-width: 244px;
+            text-transform: capitalize; 
+            font-size: 20px;
+            letter-spacing: 0;
+        }
+    }
+    img{
+        max-width: 100%;
+    }
+}
+.aaa_2{
+    padding-top: 0; 
+    padding-bottom: 230px;
+    @media(min-width:1580px){
+        .container{
+            margin-right: 0;
+            max-width: 1545px;
+        }
+    }
+    .agency_contant{
+        padding-top: 30px;
+    }
+}
+.aaa_3{ 
+    @media(min-width:1580px){
+        .container{
+            margin-right: 0;
+            max-width: 1545px;
+        }
+    }
+}
+/* End About_agency_area */
+
+/* Team_area */
+.team_area{
+    display: block;
+    overflow: hidden;
+    padding: 170px 200px 155px;
+    .team_items{
+        text-align: center;
+        margin-bottom: 30px;
+        img{
+            max-width: 100%;
+        }
+        .heding{ 
+            display: block;
+            font: 700 24px/1 $nira;
+            color: #382c4d;
+            padding-top: 45px;
+            padding-left: 45px;
+            h6{
+                display: block;
+                font: 400 16px/1 $nira;
+                color: $bc; 
+                padding-top: 13px;
+            }
+        } 
+        
+        &:hover, &:focus{
+            .heding{
+                color: $bc;
+            }
+        }
+    }
+}
+.ta_3{
+    padding-bottom: 100px;
+}
+/* End team_area */
+  

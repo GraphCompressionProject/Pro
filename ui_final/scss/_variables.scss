@@ -1,0 +1,52 @@
+/*font Variables*/  
+$nira: 'Niramit', sans-serif;
+
+/*Color Variables*/ 
+$bc: #8f49f9;
+$hover: #ff8d68; 
+$heding: #282331;  
+$pfont: rgba(40, 35, 49, 0.702);
+
+// Mixins
+@mixin transition($property: all, $duration: 300ms, $animate: linear, $delay:0s){
+    transition: $property $duration $animate $delay; 
+}
+
+// Placeholder Mixins
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}  
+
+/* Button Style */
+.theme_btn{ 
+    color: #fff;  
+    text-align: center; 
+    font: 700 18px/60px $nira;
+    display: inline-block; 
+    padding: 0 20px;   
+    background: $bc;     
+    text-transform: uppercase;
+    letter-spacing: 1px; 
+    &:hover, &:focus{
+        box-shadow: 0px 25px 42px 0px rgba(164, 109, 253, 0.35);
+        color: #fff; 
+    }
+} 
+/* Preloader */ 
+.preloader{
+    position:fixed;
+    left:0px; 
+    top:0px;
+    width:100%;
+    height:100%;
+    z-index:999999;
+    background-color:#ffffff;
+    background-position:center center;
+    background-repeat:no-repeat;
+//    background-image:url("../images/preloader.svg");
+    background-image:url("../images/preloader.png");
+    animation: heartbeat 0.5s cubic-bezier(0.245, 0.325, 0.51, 1.305) infinite alternate;
+}

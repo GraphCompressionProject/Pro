@@ -9,8 +9,12 @@ using namespace std;
 class dsm
 {
 private:
+	double tExec;
 	std::vector<unsigned int > X;
 	boost::dynamic_bitset<> B;
+
+	
+	vector<pair<vector<unsigned int>, vector<unsigned int>>> S_C_list;
 
 	void discoverSubs(DirectedGraph g, int numHash);
 	boost::dynamic_bitset<> _hasEdgeNN;
@@ -52,7 +56,19 @@ public:
 	dsm(DirectedGraph g,int numHash);
 	void printX_B();
 
+	pair<std::vector<unsigned int >, boost::dynamic_bitset<>> getX_B() {
+		return pair<std::vector<unsigned int >, boost::dynamic_bitset<>>(X, B);
+	}
+
+	void saveX_B(string filename);
+
+	vector<pair<vector<unsigned int>, vector<unsigned int>>> getSubList() {
+		return S_C_list;
+	}
 	
+	double get_Time() {
+		return tExec;
+	}
 
 	~dsm();
 };

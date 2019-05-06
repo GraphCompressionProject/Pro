@@ -1,0 +1,90 @@
+/* ------------------------------------------------------
+@File: Default Styles
+@Author: Themazine.
+@Developed By: Emran Khan
+@Developer Email: fed.emran@gmail.com
+@Developer URL: http://emran-khan.com
+
+This file contains the styling for the actual theme, this
+is the file you need to edit to change the look of the
+theme.
+------------------------------------------------------- */
+
+/* ======================================================
+@Template Name: Kabbo 
+@Author: Themazine. 
+@Default Styles
+
+Table of Content: 
+01/ Variables
+02/ Prefix
+03/ Animat 
+04/ Header
+05/ Banner
+06/ Fantasy
+07/ Countarup
+08/ About
+09/ Testimonial
+10/ Protfoilo
+11/ Blog
+12/ Work
+13/ Pricing
+14/ Services
+15/ From
+16/ Shop 
+17/ Footer 
+18/ Responsive    
+===================================================== */ 
+
+/*----------------------------------------------------*/
+@import "variables";
+/*----------------------------------------------------*/  
+@import "prefix";
+/*----------------------------------------------------*/ 
+@import "animat";
+/*----------------------------------------------------*/ 
+@import "header";
+/*----------------------------------------------------*/
+@import "banner";
+/*----------------------------------------------------*/  
+@import "fantasy";
+/*----------------------------------------------------*/ 
+@import "countarup";
+/*----------------------------------------------------*/
+@import "about";
+/*----------------------------------------------------*/  
+@import "testimonial";
+/*----------------------------------------------------*/ 
+@import "protfoilo";
+/*----------------------------------------------------*/ 
+@import "blog";
+/*----------------------------------------------------*/ 
+@import "work";
+/*----------------------------------------------------*/  
+@import "pricing";
+/*----------------------------------------------------*/  
+@import "services";
+/*----------------------------------------------------*/  
+@import "from";
+/*----------------------------------------------------*/  
+@import "shop";
+/*----------------------------------------------------*/    
+@import "footer";
+/*----------------------------------------------------*/ 
+@import "responsive"; 
+/*----------------------------------------------------*/     
+
+/*All CSS call*/
+@import "../css/bootstrap.min.css"; /* Bootstrap CSS */
+/* Icon CSS */
+@import url('https://use.fontawesome.com/releases/v5.5.0/css/all.css');
+@import "../css/font-awesome.min.css";   
+@import "../vendors/flat-icon/flaticon.css"; 
+/* Extra Plugins CSS */ 
+@import "../vendors/animate-css/animate.css"; 
+@import "../vendors/magnify-popup/magnific-popup.css";  
+@import "../vendors/owl-carousel/owl.carousel.min.css";     
+@import "../vendors/bootstrap-selector/nice-select.css";     
+@import "../vendors/jquery-ui/jquery-ui.min.css";     
+/* Font family link */
+@import url('https://fonts.googleapis.com/css?family=Niramit:400,500,600,700');

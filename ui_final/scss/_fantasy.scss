@@ -1,0 +1,185 @@
+/* Fantasy_area */
+.fantasy_area{
+    display: block;
+    overflow: hidden;
+    background: url("../images/fantasy-bg.png") no-repeat top right; 
+    padding: 270px 0 140px;
+    margin-top: -130px;
+    position: relative; 
+    .fantasy_inner{
+        max-width: 1546px;
+        margin: 0;
+        .fantasy_tittle{
+            padding-left: 200px;
+            h4{ 
+                font: 600 18px/1 $nira;
+                color: $heding;
+                padding-bottom: 53px;
+            }
+            h2{
+                font: 400 52px/62px $nira;
+                color: $heding;
+                padding-bottom: 70px;
+            }
+            .theme_btn{
+                border: 1px solid #f2e3ff;
+                background-color: transparent;
+                color: $bc;
+                min-width: 175px;
+                line-height: 48px; 
+            }
+        }
+        .fantasy_items{
+            margin: 0;
+            padding: 0;
+            padding-left: 40px;
+        }
+        .fantasy{
+            box-shadow: 0px 0px 19px 0px rgba(215, 215, 215, 0.35);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            padding: 30px 35px 65px 65px;
+            background:#fff url("../images/fantasy-1.png") no-repeat bottom right; 
+            position: relative;
+            z-index: 1;
+            .icons{
+                width: 65px;
+                line-height: 65px;
+                font-size: 32px;
+                color: #fff;
+                background: $bc;
+                text-align: center;
+                display: block;
+                box-shadow: 0px 27px 18px 0px rgba(164, 109, 253, 0.35);
+                border-radius: 10px;
+                position: relative; 
+                &:after{
+                    content: "";
+                    position: absolute;
+                    box-shadow: 0px 18px 27px 0px rgba(203, 203, 203, 0.35);
+                    background: #eaddff;
+                    border-radius: 50%;
+                    height: 60px;
+                    width: 60px;
+                    z-index: -1;
+                    left: -24px;
+                    bottom: -20px; 
+                    -webkit-animation: moveRound 20s linear 2s infinite alternate;
+                    animation: moveRound 20s linear 2s infinite alternate;
+                }
+            } 
+            a{
+                display: block;
+                font: 700 25px/1 $nira;
+                color: $heding;
+                padding-top: 55px; 
+                &:hover, &:focus{
+                    color: $hover;
+                }
+            }
+            p{
+                color: rgba(40, 35, 49, 0.8);
+                font-size: 18px;
+                padding: 35px 0; 
+            }
+            ul{
+                padding-top: 3px;
+                li{
+                    font: 400 18px/35px $nira; 
+                    color: #282331;
+                    padding-left: 35px;
+                    position: relative; 
+                    &:before{
+                        content: "\f055";
+                        position: absolute;
+                        left: 0;
+                        top: 0; 
+                        font: normal normal normal 18px/35px FontAwesome;
+                        color: rgba(143, 73, 249, 0.8);
+                    }
+                    
+                }
+            }
+            &.fantasy_2{
+                background: #fff url("../images/fantasy-2.png") no-repeat bottom right;
+                .icons{
+                    background: #ffaaf6; 
+                }
+            } 
+        }
+    }
+}
+.fa_2{
+    padding-top: 250px;
+    padding-bottom: 0;
+    .fantasy_inner{
+        .fantasy{
+            .icons{
+                background: #fff !important;
+                color: #8a7bfe;
+                box-shadow: 0px 27px 18px 0px rgba(164, 109, 253, 0.35);
+            }
+            p{
+                padding-bottom: 0;
+            }
+        }
+        .fantasy_2{  
+            .icons{
+                color: #fec0fa;
+                font-size: 28px;
+            }
+        }
+        .fantasy_4{ 
+            background: url("../images/fantasy-3.png") no-repeat bottom right;
+            .icons{
+                color: #b587fb; 
+            }
+        }
+        .fantasy_3{ 
+            background: url("../images/fantasy-4.png") no-repeat bottom right;
+            .icons{
+                color: #a2fde4; 
+            }
+        }
+        .fantasy_5{ 
+            background: url("../images/fantasy-5.png") no-repeat bottom right;
+            .icons{
+                color: #bafdbd; 
+            }
+        }
+        .fantasy_6{ 
+            background: url("../images/fantasy-6.png") no-repeat bottom right;
+            .icons{
+                color: #bef3fc; 
+            }
+        }
+    } 
+}
+.fa_3{
+    margin-top: -20px;
+}
+.fa_pages_2{
+    padding-top: 340px;
+    .fantasy_tittle{
+        h2{
+            max-width: 690px;
+            float: left;
+        }
+        .theme_btn{
+            float: right;
+            margin-top: 35px;
+        }
+    }
+    .ft_2{
+        padding-right: 0;
+        p{
+            font-size: 18px;
+            padding-bottom: 25px;
+        }
+    }
+}
+/* Fantasy_area */ 
+ 
+
+ 
+ 

@@ -294,6 +294,12 @@
     <ClInclude Include="tree_util.hh">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DDSM\DDSM.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DDSM\temporalMinHash.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -504,6 +510,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DSM\dsm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSM\DDSM.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DDSM\temporalMinHash.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

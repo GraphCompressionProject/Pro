@@ -1,6 +1,8 @@
 #pragma once
 #include <boost/dynamic_bitset.hpp>
 #include <time.h>
+#include <iostream>
+#include <fstream>
 using namespace std;
 class gcupm
 {
@@ -41,5 +43,18 @@ public:
 	double get_Time();
 	int get_size();
 	virtual ~gcupm();
+
+	void saveMat(string filename) {
+		ofstream outFile;
+		string folder1 = "..\\..\\BVTest\\data\\";
+		outFile.open(folder1 + "GCUPM_out_" + filename + ".txt", 'w');
+
+		for (int i = 0; i < mat.size(); i++) {
+			for (int j = 0; j < mat[i].size(); j++)
+				outFile << mat[i][j];
+			outFile << endl;
+		}
+		outFile.close();
+	}
 };
 

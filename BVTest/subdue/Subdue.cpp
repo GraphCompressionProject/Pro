@@ -80,6 +80,7 @@ int Subdue::main (int argc, char **argv)
         while ((iteration <= parameters->iterations) && (!done))
         {
             iterationStartTime = time(NULL);
+			SubList *subList;
             if (iteration > 1)
                 printf("----- Iteration %lu -----\n\n", iteration);
             
@@ -125,7 +126,7 @@ int Subdue::main (int argc, char **argv)
                     printf("\nBest substructure:\n\n");
                     subList->getHead()->getInstance()->PrintSub( parameters);
                 }
-                
+				
                 // write machine-readable output to file, if given
                 if (parameters->outputToFile)
                 {
@@ -144,18 +145,24 @@ int Subdue::main (int argc, char **argv)
                     fclose(outputFile);
                 }
                 
+				
                 if (iteration < parameters->iterations)
                 {                                    // Another iteration?
                     if (parameters->evalMethod == EVAL_SETCOVER)
                     {
+					
                         printf("Removing positive examples covered by");
                         printf(" best substructure.\n\n");
                         parameters->RemovePosEgsCovered(subList->getHead()->getInstance());
+						
                     }
-                    else
-                        subList->getHead()->getInstance()->CompressFinalGraphs( parameters, iteration,
-                                            FALSE);
-                    
+					else {
+						
+						subList->getHead()->getInstance()->CompressFinalGraphs(parameters, iteration,
+							FALSE);
+					}
+                       
+					
                     // check for stopping condition
                     // if set-covering, then no more positive examples
                     // if MDL or size, then positive graph contains no edges
@@ -167,9 +174,11 @@ int Subdue::main (int argc, char **argv)
                             printf("Ending iterations - ");
                             printf("all positive examples covered.\n\n");
                         }
+						
                     }
                     else
                     {
+					
                         if (parameters->posGraph->getNumEdges() == 0)
                         {
                             done = TRUE;
@@ -177,7 +186,9 @@ int Subdue::main (int argc, char **argv)
                         }
                     }
                 }
-                if ((iteration == parameters->iterations) && (parameters->compress))
+                
+				
+				if ((iteration == parameters->iterations) && (parameters->compress))
                 {
                     if (parameters->evalMethod == EVAL_SETCOVER)
                         wr.WriteUpdatedGraphToFile(subList->getHead()->getInstance(), parameters);

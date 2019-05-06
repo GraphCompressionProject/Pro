@@ -41,7 +41,7 @@ using namespace std;
 #define MAX_INT 2147483647;
 
 class MinHash {
-private:
+protected:
 	std::vector<std::vector<unsigned int>> hash;
 
 	std::vector<std::vector<unsigned int>> signature;
@@ -189,19 +189,19 @@ public:
 
 		// Append the rest of nodes to the list of clusters
 		// We use MAX_INT as a key to avoid duplicate keys 
-		if(cluster_rest.size()>1) list_of_clusters.insert({ 2147483647,cluster_rest });
+		//if(cluster_rest.size()>1) list_of_clusters.insert({ 2147483647,cluster_rest });
 
 		
 		//	You can uncomment this section 
 		//	if you want to visualize the final list 
 		//  of clusters that minhash function return 
 
-		cout <<" the list of clusters is  :: "<< endl;
-		for (std::map<unsigned int, std::vector<unsigned int>>::iterator it = list_of_clusters.begin(); it != list_of_clusters.end(); it++) {
-			cout << it->first << ":	";
-			for (int i = 0; i < it->second.size(); i++) cout<<it->second[i]<<"	";
-			cout << endl;
-		}
+		//cout <<" the list of clusters is  :: "<< endl;
+		//for (std::map<unsigned int, std::vector<unsigned int>>::iterator it = list_of_clusters.begin(); it != list_of_clusters.end(); it++) {
+		//	cout << it->first << ":	";
+		//	for (int i = 0; i < it->second.size(); i++) cout<<it->second[i]<<"	";
+		//	cout << endl;
+		//}
 
 		return list_of_clusters;
 
