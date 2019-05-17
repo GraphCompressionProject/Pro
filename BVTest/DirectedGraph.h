@@ -25,6 +25,7 @@ public:
 	 */
 	vector<listAdjacence> liste;
 	int nodes;
+
 	
 	
 public:
@@ -37,7 +38,7 @@ public:
 	DirectedGraph(const char* fileName, int load);
 	DirectedGraph(PNGraph& G);
 	
-
+	void DelEdge(int node1,int node2);
 	int getNumNodes();
 	int getNumEdges();
 	int getNodes();

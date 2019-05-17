@@ -7,6 +7,9 @@
 #include <iostream>
 #include <fstream>
 #include "helpfunctions.h"
+#include "DynamicGraph.h"
+
+
 
 using namespace std;
 
@@ -24,10 +27,15 @@ private:
 	bool isDirected;
 public:
 
+	Ik2_Trees() {
 
+	};
 	Ik2_Trees(int k, int nbT, int n, bool diff, vector<vector<boost::dynamic_bitset<>>> A);
+	Ik2_Trees(int k, int n, bool diff, DynamicGraph A);
 
 	vector<vector<boost::dynamic_bitset<>>>  CalcDiff(vector<vector<boost::dynamic_bitset<>>> A);
+	void CalcDiff(DynamicGraph A,DynamicGraph* B);
+	boost::dynamic_bitset<> build_from_Graph(int n, int l, int p, int q, DynamicGraph A);
 	// function that creates a T list for each level
 	boost::dynamic_bitset<> build_from_matrix(int n, int l, int p, int q, vector<vector<boost::dynamic_bitset<>>> A);
 	// Concatenate the T lists in 2 lists T and L
@@ -39,12 +47,6 @@ public:
 	boost::dynamic_bitset<> get_L();
 	double get_Time();
 
-
-	void getDirect(int n, int  p, int  q, int  x);
-	void getReverse(int n, int  p, int  q, int  x);
-
-	void Direct(int n, int  p, int  q, int   x);
-	void Reverse(int n, int  p, int  q, int  x);
 
 	void saveT_L(string filename) {
 		ofstream outFile;

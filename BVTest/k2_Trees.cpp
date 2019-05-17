@@ -28,8 +28,6 @@ k2_Trees::k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A, bool i
 	build_from_matrix(n1, 1, 0, 0, A);
 	tExcexution = (double)(clock() - tStart) / CLOCKS_PER_SEC;
 	
-
-	
     BuildTree();
 
 
@@ -116,11 +114,14 @@ k2_Trees::k2_Trees(int k, int n, DirectedGraph G,vector<int> order)
 		n1 = pow(k, prof);
 	}
 	clock_t tStart = clock();
+	
 	build_from_Graph(n1, 1, 0, 0, G,order);
+
 	tExcexution = (double)(clock() - tStart) / CLOCKS_PER_SEC;
-
+	//std::cout << k << endl;
+	
 	BuildTree();
-
+	
 	T.clear();
 	T.shrink_to_fit();
 }
@@ -270,7 +271,7 @@ int k2_Trees::build_from_List(int n, int l, int p, int q, std::vector<listAdjace
 				
 				if (l == prof) { //leaf node
 					
-					if (  A->size() <= (p + i) || A->at(p+i).getList().size() == 0|| A->at(p + i).getNext() != (q + j)) C.push_back(false);
+					if (A->size() <= (p + i) || A->at(p + i).getList().size() == 0 || A->at(p + i).getNext() != (q + j)) C.push_back(false);
 					else {
 						C.push_back(true);
 						A->at(p + i).advance();

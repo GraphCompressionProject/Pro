@@ -19,6 +19,7 @@ c:\users\hafsa\desktop\pro\bvtest\x64\release\dynamicgraph.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\minhash.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\dsm.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\directedgraph.obj
+c:\users\hafsa\desktop\pro\bvtest\x64\release\ddsm.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\compression_flags.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\bvtest.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\snap.obj
@@ -72,7 +73,7 @@ c:\users\hafsa\desktop\pro\bvtest\x64\release\tester_main.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\tester.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\substructure.obj
 c:\users\hafsa\desktop\pro\bvtest\x64\release\sublistnode.obj
-c:\users\hafsa\desktop\pro\bvtest\x64\release\ddsm.obj
+c:\users\hafsa\desktop\pro\bvtest\x64\release\temporalminhash.obj
 c:\users\hafsa\desktop\pro\x64\release\bvtest.exe
 c:\users\hafsa\desktop\pro\x64\release\bvtest.pdb
 c:\users\hafsa\desktop\pro\bvtest\x64\release\bvtest.res

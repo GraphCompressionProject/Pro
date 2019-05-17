@@ -150,7 +150,6 @@ DirectedGraph::DirectedGraph(const char* fileName)
 		assert(nodes > 0);
 		//double partie = length / 10.0 ; 
 		//cout << "file length " << (int)length << " bytes" << endl;
-
 		creatMatrice(nodes);
 		//double cumul = 0.0; 
 		int pourcentage = 10;
@@ -192,7 +191,7 @@ DirectedGraph::DirectedGraph(const char* fileName)
 						iss >> val;
 						results.push_back(val);
 					}
-					
+					//Bcout << results.at(0) << "	" << results.at(1) << endl;
 					matrice[results.at(0)][results.at(1)] = true;
 				}
 			}
@@ -215,6 +214,8 @@ DirectedGraph::DirectedGraph(const char* fileName)
 		{
 			cerr << "File not opened" << endl;
 		}
+
+		
 
 }
 
@@ -366,6 +367,10 @@ bool DirectedGraph::emptyGraph()
 void DirectedGraph::sortAdjencyLists()
 {
 	graph->SortNodeAdjV();
+}
+
+void DirectedGraph::DelEdge(int node1,int  node2) {
+	graph->DelEdge(getNodeID(node1), getNodeID(node1));
 }
 
 void DirectedGraph::saveGraph()

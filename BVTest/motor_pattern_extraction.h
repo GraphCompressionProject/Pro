@@ -26,10 +26,10 @@ public:
 
 	void compressGraph(const char * graphName, int numHash) {
 		DirectedGraph graph(graphName, 1);
-		dsm d(graph,numHash);
+		dsm d(graph,numHash,true);
 
-		cout << (graph.getNumNodes()*graph.getNumNodes()) / ( d.getX_B().first.size() + d.getX_B().second.size() ) << endl;
-		cout << (double)(d.getX_B().first.size() + d.getX_B().second.size()) / graph.getNumNodes() << endl;
+		cout << (graph.getNumNodes()*graph.getNumNodes() ) / ( d.getX_B().first.size() + d.getX_B().second.size() + d.getErrorSize()) << endl;
+		cout << (double)(d.getX_B().first.size() + d.getX_B().second.size() + d.getErrorSize()) / graph.getNumNodes() << endl;
 		cout << (double)d.get_Time() << endl;
 	}
 

@@ -184,29 +184,34 @@ void dsm::discoverSubs(DirectedGraph g, int numHash)
 				savings.insert(element_t( h, ( S_C[h].first.size() - 1)*(S_C[h].second.size() - 1) - 1 ));
 
 			for (auto it = savings.get<1>().rbegin(); it != savings.get<1>().rend(); it++) {
-				if (it->second >= threadshold) bestS_C.push_back(S_C[it->first]);
+				if (it->second >= threadshold) { 
+					bestS_C.push_back(S_C[it->first]); 
+				}
 				else break;
 			}
 
 			// 4.4 append the best S and C to subslist
-			append(bestS_C);
+			append(bestS_C,G);
 			
 		}
 		}
 		
-		//printX_B();
 
+		if (CompressError) {
+			k2_Trees arbre(2, G.getNumNodes(), G);
+			ErrorCompressed = arbre;
+		}
 		
+		//printX_B();
 
 }
 
-void dsm::append(vector<pair<vector<unsigned int>, vector<unsigned int>>> bestS_C) {
+void dsm::append(vector<pair<vector<unsigned int>, vector<unsigned int>>> bestS_C,DirectedGraph G) {
 
 	for (auto elem : bestS_C) {
 		vector<unsigned int> L;
 		vector<unsigned int> M;
 		vector<unsigned int> R;
-
 
 
 		std::sort(elem.first.begin(), elem.first.end());
@@ -222,12 +227,30 @@ void dsm::append(vector<pair<vector<unsigned int>, vector<unsigned int>>> bestS_
 		for (auto a : L) {
 			X.push_back(a);
 			B.push_back(false);
+			// We update the Graph of errors
+			if (CompressError) {
+				for (auto b : M) {
+					if (G.edgeBetween(a, b)) G.DelEdge(a, b);
+					else G.addedge2(a, b);
+				}
+				for (auto b : R) {
+					if (G.edgeBetween(a, b)) G.DelEdge(a, b);
+					else G.addedge2(a, b);
+				}
+
+			}
 		}
 
 		B.push_back(true);
 		for (auto a : M) {
 			X.push_back(a);
 			B.push_back(false);
+			if (CompressError) {
+				for (auto b : R) {
+					if (G.edgeBetween(a, b)) G.DelEdge(a, b);
+					else G.addedge2(a, b);
+				}
+			}
 		}
 
 		B.push_back(true);
@@ -237,8 +260,6 @@ void dsm::append(vector<pair<vector<unsigned int>, vector<unsigned int>>> bestS_
 		}
 
 	}
-
-
 }
 
 
@@ -286,7 +307,8 @@ dsm::dsm()
 {
 }
 
-dsm::dsm(DirectedGraph g, int numHash)
+dsm::dsm(DirectedGraph g, int numHash,bool compressError):
+	CompressError(compressError)
 {
 	clock_t tStart = clock();
 	for (int i = 0; i < g.getNumNodes(); i++) _hasEdgeNN.push_back(TRUE);
@@ -304,7 +326,26 @@ void dsm::saveX_B(string filename)
 	for (int i = 0; i < X.size();i++) outFile<<X[i];
 	outFile << endl <<endl;
 	for (int i = 0; i < B.size(); i++) outFile << B[i];
+	if (CompressError) {
+		outFile << endl << endl;
+
+		outFile << "##The k2-tree representation of the error" << endl;
+		outFile << endl << endl;
+		for (int i = 0; i < ErrorCompressed.get_T().size(); i++) outFile << ErrorCompressed.get_T()[i];
+		outFile << endl << endl;
+		for (int i = 0; i < ErrorCompressed.get_L().size(); i++) outFile << ErrorCompressed.get_L()[i];
+
+	}
+
+
+
 	outFile.close();
+}
+
+void dsm::updateError(DirectedGraph G, pair<vector<unsigned int>, vector<unsigned int>> S_C)
+{
+
+
 }
 
 dsm::~dsm()

@@ -63,6 +63,7 @@ public:
 
 	void compressGraphK2StatFromMatrix(const char* graphName, int k, bool isdirected) {
 		if (isdirected) {
+			//cout << graphName << endl;
 			DirectedGraph graph(graphName);
 			k2_Trees tree(k, graph.getNodes(), graph.getMatrix(), isdirected);
 			//cout << "T = " << tree.get_T() << endl;

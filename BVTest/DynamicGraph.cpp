@@ -133,6 +133,8 @@ DynamicGraph::DynamicGraph(const char* fileName)
 	{
 		cerr << "File not opened" << endl;
 	}
+
+	
 }
 
 void DynamicGraph::init(string filename)
@@ -146,7 +148,7 @@ void DynamicGraph::init(string filename)
 	//récupérer le nombre de noeuds 
 	string nextline;
 
-	cout << "I am here" << endl;
+	
 	//getline(myfile, nextline);
 	//istringstream nt(nextline);
 
@@ -200,6 +202,10 @@ void DynamicGraph::init(string filename)
 	else
 	{
 		cerr << "File not opened" << endl;
+	}
+
+	for (auto& g : graph) {
+		if (nodes < g.second.getNumNodes()) nodes = g.second.getNumNodes();
 	}
 }
 

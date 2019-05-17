@@ -39,6 +39,9 @@ private:
 
 public:
     // Constructor
+	k2_Trees() {
+
+	};
     k2_Trees(int k, int n, std::vector<boost::dynamic_bitset<> > A, bool isDirected);
 	k2_Trees(int k, int n, std::vector<listAdjacence> A, bool isDirected);
 	k2_Trees(int k, int n, DirectedGraph G);

@@ -39,10 +39,10 @@ public:
 			a.push_back(NI.GetId());
 		}
 
-		cout << "Random Order of the graph in process ..." << endl;
+		//cout << "Random Order of the graph in process ..." << endl;
 		random_shuffle(std::begin(a), std::end(a));
 		saveOrderedGraph(G, a, "RandomOrder_");
-		cout << "Random Order accomplished." << endl;
+		//cout << "Random Order accomplished." << endl;
 		return a;
 
 	}		
@@ -55,10 +55,10 @@ public:
 		}
 
 		
-		cout << "Lexicographical Order of the graph in process ..." << endl;
+		//cout << "Lexicographical Order of the graph in process ..." << endl;
 		std::sort(a.begin(), a.end(),   bind(&Order::lexicographicalComparator, this, _1, _2));
 		saveOrderedGraph(G, a, "lexicographicalOrder_");
-		cout << "Lexicographical Order accomplished" << endl;	
+		//cout << "Lexicographical Order accomplished" << endl;	
 		return a;
 	}	
 	vector<int> GrayOrder(DirectedGraph & G)
@@ -69,10 +69,10 @@ public:
 			a.push_back(NI.GetId());
 		}
 
-		cout << "Gray Order of the graph in process ..." << endl;
+		//cout << "Gray Order of the graph in process ..." << endl;
 		std::sort(a.begin(), a.end(), bind(&Order::GrayComparator, this, _1, _2));
 		saveOrderedGraph(G, a, "GrayOrder_");
-		cout << "Gray Order accomplished" << endl;
+		//cout << "Gray Order accomplished" << endl;
 		return a;
 		
 
@@ -120,9 +120,9 @@ public:
 			}
 		}
 		
-		cout << "DFS Order of the graph in process ..." << endl;
+		//cout << "DFS Order of the graph in process ..." << endl;
 		saveOrderedGraph(G, order, "DfsOrder_");
-		cout << "DFS Order accomplished" << endl;
+		//cout << "DFS Order accomplished" << endl;
 		return order;
 	}
 	vector <int> BfsOrder(DirectedGraph & G) {
@@ -175,9 +175,9 @@ public:
 		}
 
 
-		cout << "BFS Order of the graph in process ..." << endl;
+		//cout << "BFS Order of the graph in process ..." << endl;
 		saveOrderedGraph(G, order, "BfsOrder_");
-		cout << "BFS Order accomplished" << endl;
+		//cout << "BFS Order accomplished" << endl;
 		return order;
 	}
 	
@@ -271,7 +271,7 @@ private:
 			myfile.close();
 		}
 		else {
-			cerr << "File not opened" << endl;
+			//cerr << "File not opened" << endl;
 		}
 	}
 	
